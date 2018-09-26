@@ -1,1 +1,1 @@
-![Emtiyaz Logo](https://static.emtiyaz.app/img/logo_color_blacktxt_fa.png | width=200)
+![Emtiyaz Logo](https://static.emtiyaz.app/logo/png/logo-color-blacktxt-fa-small.png)
