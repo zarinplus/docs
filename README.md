@@ -1,4 +1,5 @@
 ![Emtiyaz Logo](https://static.emtiyaz.app/logo/png/logo-color-blacktxt-fa-small.png)
 
 # Emtiyaz Documentation
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./license)
+
+### _Please_, feel free to make any contributions you feel will make Emtiyaz Documentation better.
