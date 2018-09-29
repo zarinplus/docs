@@ -16,7 +16,7 @@
 
 ## Payment
 
-This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
+This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
 ### Create Payment Request
 Get your `{private token}` from your merchant account and replace it in the request endpoint.
@@ -96,7 +96,7 @@ Also you must store the authority value for this transaction in your database fo
 
 ### Verify Transaction
 
-After the buyers make the payment with their points, We redirect them to the `success` URL you previously provided to us.
+After the buyers make the payments with their points, We redirect them to the `success` URL you previously provided to us.
 Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
@@ -190,7 +190,7 @@ Get your `{Private Token}` from your partner account _(User settings)_ and repla
 
 We add `mt_click_id` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
 
-_Attention: You should store mt_click_id value to their users cookie by yourself or just add `javascript tag` to your landing page._
+_Attention: You should store mt_click_id value to their users cookie by yourself or just add the javascript tag to your landing page._
 
 Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` method.
 
