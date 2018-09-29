@@ -163,7 +163,7 @@ Easily just add this javascript tag in to your landing page.
 
 Call the emtiyaz_callback() method when a conversion happened, For example when (/thankyou.html) thank for your purchase page loaded.
 
-**_Attention:Callback via Javascript is not secure._**
+_Attention: Callback via Javascript is not secure._
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 	<script type="text/javascript">
@@ -176,7 +176,7 @@ Call the emtiyaz_callback() method when a conversion happened, For example when 
 
 Call the emtiyaz_callback() method when a conversion happened, For example when user click on _Register_ button.
 
-**_Attention:Callback via Javascript is not secure._**
+_Attention: Callback via Javascript is not secure._
 
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
@@ -197,7 +197,7 @@ Get your {Private Token} from your partner account _(User settings)_ and replace
 
 We add **mt_click_id** parameter to your offer's landing page via GET method please send it back to our endpoint.
 
-**_Attention: You can store mt_click_id value to their users cookie by youself or just add javascript tag to your landing page_**
+_Attention: You can store mt_click_id value to their users cookie by youself or just add javascript tag to your landing page_
 
 Callback these parameters to the endpoint via GET or POST request When conversion happened.
 
