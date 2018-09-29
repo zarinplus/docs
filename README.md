@@ -7,19 +7,17 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Request](#payment-request)
+	* [Create Payment Request](#create-payment-request)
 	* [Verify Transaction](#verify-transaction)
 * [Callback](#callback)
-	* [Setup Callback Via Javascript](#callback-via-javascript)
-	* [Callback Via API Endpoint](#callback-via-p2p)
+	* [Setup Javascript Tag](#setup-javascript-tag)
+	* [Callback Via API Endpoint](#callback-via-api-endpoint)
 
 
-<a name="payment"></a>
 ## Payment
 
 This part of document is for merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
-<a name="payment-request"></a>
 ### Create Payment Request
 Get your {Private Token} from your partner merchant account and replace it in URL.
 
@@ -96,7 +94,6 @@ Also you must store the authority value for this transaction in your database fo
 	https://offerwall.emtiyaz.app/?authority={authority}
 
 
-<a name="verify-transaction"></a>
 ### Verify Transaction
 
 After the users make the payment with their points we redirect them to the success URL you previously provided to us.
@@ -146,11 +143,9 @@ If you send correct request then the response should be same thing like that.
 		"message" : "Successful"
 	}
 
-<a name="callback"></a>
 ## Callback
 This part of document is for bidders (Advertisers), Then users complete your offer you should immediately inform us the conversion.
 
-<a name="callback-via-javascript"></a>
 ### Setup Javascript Tag
 
 Easily just add this javascript tag in to your landing page.
