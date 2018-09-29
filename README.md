@@ -154,9 +154,9 @@ Easily just add this javascript tag in to your landing page.
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 
-#### Javascript Callback On Load
+#### Javascript Callback On Page Load
 
-Call the emtiyaz_callback() method when a conversion happened, For example when (/thankyou.html) thank for your purchase page loaded.
+Call the emtiyaz_callback() method when a conversion happened by visiting a web page, _For example_ when `/thankyou.html` page visited.
 
 _Attention: Callback via Javascript is not secure._
 
@@ -169,7 +169,7 @@ _Attention: Callback via Javascript is not secure._
 
 #### Javascript Callback On click
 
-Call the emtiyaz_callback() method when a conversion happened, For example when user click on _Register_ button.
+Call the emtiyaz_callback() method when a conversion happened by clicking on a button, _For example_ when user click on _Register_ button.
 
 _Attention: Callback via Javascript is not secure._
 
