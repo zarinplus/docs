@@ -135,7 +135,7 @@ This schema define the each parameter's value and type.
 
 #### Good Response
 
-Well now, The payment is complete and verified, It's time to deliver your goods or service to buyer.
+Well now, The payment is complete and verified, It's time to deliver your goods or services to buyer.
 If you send correct request then the response should be same thing like that.
 
 	{
@@ -148,7 +148,7 @@ This part of document is for bidders _(Advertisers)_, When users complete your o
 
 ### Setup Javascript Tag
 
-Easily put this this javascript to your landing page.
+Easily put this javascript tag to your landing page.
 
 #### Javascript Tag
 
