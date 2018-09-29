@@ -11,7 +11,7 @@
 	* [Verify Transaction](#verify-transaction)
 * [Callback](#callback)
 	* [Setup Callback Via Javascript](#callback-via-javascript)
-	* [Setup Callback Via P2P](#callback-via-p2p)
+	* [Callback Via API Endpoint](#callback-via-p2p)
 
 
 <a name="payment"></a>
