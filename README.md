@@ -22,7 +22,8 @@
 
 <a name="payment"></a>
 ## Payment
-If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
+
+This part of document is for Merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 <a name="payment-request"></a>
 ### Create Payment Request
@@ -96,15 +97,18 @@ Now you should build the URL by replacing {authority} with the authority you rec
 <a name="verify-transaction"></a>
 ### Verify Transaction
 
-We redirect to your success or cancel URL 
+After the users make the payment with their points with redirect them to success URL you previously provided to us.
+Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
 
 #### Verify Endpoint
 
-	https://api.emtiyaz.app/{Merchant Token}/payment/verify.json
+	https://api.emtiyaz.app/{Private Token}/payment/verify.json
 
 #### Body
+
+Send these parameters to the endpoint via GET or POST request.
 
 	{
 		"currency" : "IRR",
@@ -114,37 +118,38 @@ We redirect to your success or cancel URL
 
 #### Body Schema
 
+This schema define the each parameter's values and type.
+
 	{
-	    "type" : "object",
-	    "properties" : {
-	      "currency" : {
-		  "type" : "string",
-		  "description" : "Those currency codes are supported IRR, IRT, POT, USD"
-	      },
-	      "amount" : {
-		  "type" : "float"
-	      },
-	      "authority" : {
-		  "type" : "string"
-	      }
-	    }
+		"currency" : {
+			"type" : "string",
+			"description" : "Those currency codes are supported IRR, IRT, POT, USD"
+		},
+		"amount" : {
+			"type" : "float"
+		},
+		"authority" : {
+			"type" : "string"
+		}
 	}
 
 #### Good Response
+
+If you send correct request then the response should be same thing like that.
 
 	{
 		"status" : "100",
 		"message" : "Successful"
 	}
 
-
 <a name="callback"></a>
 ## Callback
-Then users complate your offer immediately you should give them the points.
+This part of document is for bidders (Advertisers), Then users complate your offer you should immediately give them the points and inform us the conversion.
 
 <a name="callback-via-javascript"></a>
 ### Setup Callback Via Javascript
-Fast and simple just add this javascript tag in to your web pages.
+
+Easily just add this javascript tag in to your web pages. Callback via Javascript is not secure.
 
 #### Javascript Tag
 
@@ -156,26 +161,37 @@ Fast and simple just add this javascript tag in to your web pages.
 
 #### Javascript Callback Onload
 
+Call the emtiyaz_callback() method then a conversion happend on page loaded.
+
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 	<script type="text/javascript">
 	window.onload = function() {
-		emtiyaz_callback('New User');
+		emtiyaz_callback('');
 	};
 	</script>
 
 #### Javascript Callback Onclick
 
+OR call the emtiyaz_callback() method then a conversion happens on click.
+
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-	<button onclick="emtiyaz_callback('register')">Register</button>
+	<button onclick="emtiyaz_callback('')">Register</button>
 
 <a name="callback-via-p2p"></a>
 ### Setup Callback Via P2P
 
+Callback via P2P API is too secure, We recommend implement this method instead of javascript callback.
+
 #### API Endpoint
 
-	https://callback.emtiyaz.app/{token}
+Get your {Private Token} from your partner bidder account (User settings) and replace it in URL.
+
+	https://callback.emtiyaz.app/{Private Token}
 
 #### Body
+
+We send these parameters on your offer's landing page via GET method please send them back to our endpoint.
+Send these parameters to the endpoint via GET or POST request.
 
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
@@ -204,6 +220,9 @@ Fast and simple just add this javascript tag in to your web pages.
 	  }
 
 #### Good Response
+
+If you get good response then the user get the point immediately from you.
+If you send correct request then the response should be same thing like that.
 
 	{
 		"status" : "200",
