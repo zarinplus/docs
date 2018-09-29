@@ -19,11 +19,11 @@
 This part of document is for merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 ### Create Payment Request
-Get your `{Private Token}` from your partner merchant account and replace it in URL.
+Get your `{private token}` from your partner merchant account and replace it in URL.
 
 #### Request Endpoint
 
-	https://api.emtiyaz.app/{Private Token}/payment/request.json
+	https://api.emtiyaz.app/{private token}/payment/request.json
 	
 
 #### Body
@@ -42,7 +42,7 @@ Send these parameters to the endpoint via `GET` or `POST` request.
 
 #### Body Schema
 
-This schema define the each parameter's values and type.
+This schema define the each parameter's value and type.
 
 	{
 		"currency" : {
@@ -85,29 +85,29 @@ If you send correct request then the response should be same thing like that.
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
-#### Redirect to emtiyaz
+#### Redirect To Offerwall
 
 Now you should build the URL by replacing `{authority}` with the authority you received from previous step and then redirect to offerwall.
 
-Also you must store the authority value for this transaction in your database for next actions.
+Also you must store the authority value for this transaction in your database for next action.
 
 	https://offerwall.emtiyaz.app/?authority={authority}
 
 
 ### Verify Transaction
 
-After the users make the payment with their points we redirect them to the success URL you previously provided to us.
+After the users make the payment with their points we redirect them to the `success` URL you previously provided to us.
 Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
 
 #### Verify Endpoint
 
-	https://api.emtiyaz.app/{Private Token}/payment/verify.json
+	https://api.emtiyaz.app/{private token}/payment/verify.json
 
 #### Body
 
-Now please find the transaction infomations by authority in your database and send them back for verfiy.
+Now please find the transaction infomation by authority in your database and send them back for verfiy.
 Send these parameters to the endpoint via `GET` or `POST` request.
 
 	{
@@ -118,7 +118,7 @@ Send these parameters to the endpoint via `GET` or `POST` request.
 
 #### Body Schema
 
-This schema define the each parameter's values and type.
+This schema define the each parameter's value and type.
 
 	{
 		"currency" : {
@@ -135,7 +135,7 @@ This schema define the each parameter's values and type.
 
 #### Good Response
 
-Well now, the payment in complete and verified.
+Well now, The payment is complete and verified.
 If you send correct request then the response should be same thing like that.
 
 	{
@@ -144,11 +144,11 @@ If you send correct request then the response should be same thing like that.
 	}
 
 ## Callback
-This part of document is for bidders (Advertisers), When users complete your offer you should immediately inform us the conversion.
+This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us a conversion happened.
 
 ### Setup Javascript Tag
 
-Easily just add this javascript tag in to your landing page.
+Easily put this this javascript to your landing page.
 
 #### Javascript Tag
 
@@ -176,7 +176,6 @@ _Attention: Callback via Javascript is not secure._
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 	<button onclick="emtiyaz_callback('')">Register</button>
 
-<a name="callback-via-p2p"></a>
 ### Callback Via API Endpoint
 
 Callback via API endpoint is too secure, We recommend implement this method instead of javascript callback.
@@ -193,7 +192,7 @@ We add `mt_click_id` parameter to your offer's landing page via `GET` parameter 
 
 _Attention: You should store mt_click_id value to their users cookie by yourself or just add our javascript tag to your landing page._
 
-Read these parameters from users cookie and then callback the API endpoint via `GET` or `POST` request.
+Read these parameters from users cookie and then send then to the API endpoint via `GET` or `POST` request.
 
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
