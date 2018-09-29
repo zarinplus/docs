@@ -16,10 +16,10 @@
 
 ## Payment
 
-This part of document is for merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
+This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 ### Create Payment Request
-Get your `{private token}` from your merchant account and replace it in URL.
+Get your `{private token}` from your merchant account and replace it in the request endpoint.
 
 #### Request Endpoint
 
@@ -28,7 +28,7 @@ Get your `{private token}` from your merchant account and replace it in URL.
 
 #### Body
 
-Send these parameters to the endpoint via `GET` or `POST` request.
+Send these parameters to the request endpoint via `GET` or `POST` method.
 
 	{
 		"currency" : "IRR",
@@ -42,7 +42,7 @@ Send these parameters to the endpoint via `GET` or `POST` request.
 
 #### Body Schema
 
-This schema define the each parameter's value and type.
+This schema define the each parameter's type and value.
 
 	{
 		"currency" : {
@@ -87,7 +87,7 @@ If you send correct request then the response should be same thing like that.
 
 #### Redirect To Offerwall
 
-Now you should build the URL by replacing `{authority}` with the authority you received from previous step and then redirect to offerwall.
+Now you should build the offerwall's URL by replacing `{authority}` with the authority you received from previous step and then redirect to offerwall.
 
 Also you must store the authority value for this transaction in your database for next action.
 
@@ -96,7 +96,7 @@ Also you must store the authority value for this transaction in your database fo
 
 ### Verify Transaction
 
-After the buyers make the payment with their points we redirect them to the `success` URL you previously provided to us.
+After the buyers make the payment with their points, We redirect them to the `success` URL you previously provided to us.
 Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
@@ -108,7 +108,7 @@ Now you should verfiy the payment transaction.
 #### Body
 
 Now please find the transaction infomation by authority in your database and send them back for verfiy.
-Send these parameters to the endpoint via `GET` or `POST` request.
+Send these parameters to the verify endpoint via `GET` or `POST` method.
 
 	{
 		"currency" : "IRR",
@@ -118,7 +118,7 @@ Send these parameters to the endpoint via `GET` or `POST` request.
 
 #### Body Schema
 
-This schema define the each parameter's value and type.
+This schema define the each parameter's type and value.
 
 	{
 		"currency" : {
@@ -144,7 +144,7 @@ If you send correct request then the response should be same thing like that.
 	}
 
 ## Callback
-This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us a conversion happened.
+This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
 
 ### Setup Javascript Tag
 
@@ -188,11 +188,11 @@ Get your `{Private Token}` from your partner account _(User settings)_ and repla
 
 #### Body
 
-We add `mt_click_id` parameter to your offer's landing page via `GET` parameter you should send it back to our API endpoint.
+We add `mt_click_id` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
 
-_Attention: You should store mt_click_id value to their users cookie by yourself or just add our javascript tag to your landing page._
+_Attention: You should store mt_click_id value to their users cookie by yourself or just add `javascript tag` to your landing page._
 
-Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` request.
+Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` method.
 
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
@@ -201,6 +201,8 @@ Read these parameters from users cookie and then send them to the API endpoint v
 	}
 
 #### Body Schema
+
+This schema define the each parameter's type and value.
 
 	{
 		"mt_click_id" : {
@@ -219,7 +221,7 @@ Read these parameters from users cookie and then send them to the API endpoint v
 
 #### Good Response
 
-Well now, The user get the point(s) immediately from you.
+Well now, The user get the points immediately from you.
 If you send correct request then the response should be same thing like that.
 
 	{
