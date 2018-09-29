@@ -205,23 +205,20 @@ Send these parameters to the endpoint via GET or POST request.
 
 #### Body Schema
 
-	  {
-	    "type" : "object",
-	    "properties" : {
-	      "mt_click_id" : {
-		  "type" : "string",
-		  "description" : "Click identity is required"
-	      },
-	      "mt_ip" : {
-		  "type" : "string",
-		  "description" : "The client IP address"
-	      },
-	      "mt_event" : {
-		 "type" : "string",
-		 "description" : "Keyword about the event happened, like New-user, Order, Install"
-	      }
-	    }
-	  }
+	{
+		"mt_click_id" : {
+			"type" : "string",
+			"description" : "Click identity is required"
+		},
+		"mt_ip" : {
+			"type" : "string",
+			"description" : "The client IP address"
+		},
+		"mt_event" : {
+			"type" : "string",
+			"description" : "Keyword about the event happened, like New-user, Order, Install"
+		}
+	}
 
 #### Good Response
 
@@ -239,4 +236,5 @@ If you send correct request then the response should be same thing like that.
 		"status" : "400",
 		"message" : "Invalid"
 	}
+
 
