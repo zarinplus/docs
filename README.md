@@ -9,7 +9,7 @@
 * [Payment](#payment)
 	* [Create Payment Request](#payment-request)
 	* [Verify Transaction](#verify-transaction)
-* [Callback](#Callback)
+* [Callback](#callback)
 	* [Setup Callback Via Javascript](#callback-via-javascript)
 	* [Setup Callback Via P2P](#callback-via-p2p)
 
