@@ -140,7 +140,7 @@ We redirect to your success or cancel URL
 
 <a name="callback"></a>
 ## Callback
-Then users complate your offer emeditel you should give them the points.
+Then users complate your offer immediately you should give them the points.
 
 <a name="callback-via-javascript"></a>
 ### Setup Callback Via Javascript
@@ -152,16 +152,14 @@ Fast and simple just add this javascript tag in to your web pages.
 		var emtiyaz_data = emtiyaz_data || [];
 		emtiyaz_data['notification'] = true;
 	</script>
-	
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 
 #### Javascript Callback Onload
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-	
 	<script type="text/javascript">
 	window.onload = function() {
-	  emtiyaz_callback('New User');
+		emtiyaz_callback('New User');
 	};
 	</script>
 
@@ -174,15 +172,16 @@ Fast and simple just add this javascript tag in to your web pages.
 ### Setup Callback Via P2P
 
 #### API Endpoint
+
 	https://callback.emtiyaz.app/{token}
 
 #### Body
 
-	    {
+	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
 		"mt_ip" : "46.209.239.50",
 		"mt_event" : "New User"
-	    }
+	}
 
 #### Body Schema
 
@@ -206,15 +205,15 @@ Fast and simple just add this javascript tag in to your web pages.
 
 #### Good Response
 
-	  {
-	      "status" : "200",
-	      "message" : "Successful"
-	  }
+	{
+		"status" : "200",
+		"message" : "Successful"
+	}
 
 #### Bad Response
 
-	  {
-	      "status" : "400",
-	      "message" : "Invalid"
-	  }
+	{
+		"status" : "400",
+		"message" : "Invalid"
+	}
 
