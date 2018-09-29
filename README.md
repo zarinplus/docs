@@ -28,12 +28,12 @@ If you would like to create payment requests from your server and confirm the tr
 <a name="payment-request"></a>
 ### Create Payment Request
 
-#### API Request Endpoint
+#### Request Endpoint
 
 	https://api.emtiyaz.app/{Merchant Token}/payment/request.json
 	
 
-#### API Request Body
+#### Body
 
 	{
 		"currency" : "IRR",
@@ -45,7 +45,7 @@ If you would like to create payment requests from your server and confirm the tr
 		"email" : "name@email.com"
 	}
 
-#### API Request Body Schema
+#### Body Schema
 
 	{
 	    "type" : "object",
@@ -75,7 +75,7 @@ If you would like to create payment requests from your server and confirm the tr
 	    }
 	}
   
-#### API Request Good Response
+#### Good Response
   
 	{
 		"status" : "200",
@@ -86,7 +86,7 @@ If you would like to create payment requests from your server and confirm the tr
 #### Redirect to emtiyaz
 	https://emtiyaz.app/?authority={authority}
 
-#### API Request Bad Response
+#### Bad Response
 
 	{
 		"status" : "400",
@@ -101,11 +101,11 @@ We redirect to your success or cancel URL
 
 	http://www.mystore.com/success/?authority={authority}
 
-API Verify Endpoint
+Verify Endpoint
 
 	https://api.emtiyaz.app/{Merchant Token}/payment/verify.json
 
-API Verify Body
+Body
 
 	{
 		"currency" : "IRR",
@@ -113,7 +113,7 @@ API Verify Body
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
-API Verify Body Schema
+Body Schema
 
 	{
 	    "type" : "object",
@@ -131,7 +131,7 @@ API Verify Body Schema
 	    }
 	}
 
-API Verify Good Response
+Good Response
 
 	{
 		"status" : "100",
