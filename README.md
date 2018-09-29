@@ -192,7 +192,7 @@ We add `mt_click_id` parameter to your offer's landing page via `GET` parameter 
 
 _Attention: You should store mt_click_id value to their users cookie by yourself or just add our javascript tag to your landing page._
 
-Read these parameters from users cookie and then send then to the API endpoint via `GET` or `POST` request.
+Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` request.
 
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
