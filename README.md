@@ -13,8 +13,8 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Request](#payment-request)
-	* [Verify](#payment-verify)
+	* [Create Payment Request](#payment-request)
+	* [Verify Transaction](#verify-transaction)
 * [Callback](#Callback)
 	* [Client Side](#callback-client-side)
 	* [Server Side](#callback-server-side)
@@ -22,9 +22,10 @@
 
 
 <a name="payment"></a>
-## payment
+## Payment
 If you would like to create payment requests from your server and confirm the transactions, Please use this document to implement the payment via our payment API.
 
+<a name="payment-request"></a>
 ### Create Payment Request
 
 #### API Request Endpoint
@@ -91,3 +92,50 @@ If you would like to create payment requests from your server and confirm the tr
 		"status" : "400",
 		"message" : "Invalid token"
 	}
+
+
+<a name="verify-transaction"></a>
+### Verify Transaction
+
+We redirect to your success or cancel URL 
+
+	http://www.mystore.com/success/?authority={authority}
+
+API Verify Endpoint
+
+	https://api.emtiyaz.app/{Merchant Token}/payment/verify.json
+
+API Verify Body
+
+	{
+		"currency" : "IRR",
+		"amount" : 50000,
+		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
+	}
+
+API Verify Body Schema
+
+	{
+	    "type" : "object",
+	    "properties" : {
+	      "currency" : {
+		  "type" : "string",
+		  "description" : "Those currency codes are supported IRR, IRT, POT, USD"
+	      },
+	      "amount" : {
+		  "type" : "float"
+	      },
+	      "authority" : {
+		  "type" : "string"
+	      }
+	    }
+	}
+
+API Verify Good Response
+
+	{
+		"status" : "100",
+		"message" : "Successful"
+	}
+
+
