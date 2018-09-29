@@ -49,10 +49,13 @@ This schema define the each parameter's values and type.
 	{
 		"currency" : {
 			"type" : "string",
-			"description" : "Those currency codes are supported IRR, IRT, POT, USD"
+			"description" : "Currency is required, Those currency codes are supported IRR, IRT, POT, USD"
+
 		},
 		"amount" : {
 			"type" : "float"
+			"description" : "Amount is required"
+
 		},
 		"cancel" : {
 			"type" : "string"
