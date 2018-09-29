@@ -146,7 +146,7 @@ Then users complate your offer immediately you should give them the points.
 ### Setup Callback Via Javascript
 Fast and simple just add this javascript tag in to your web pages.
 
-#### Javascript Tag:
+#### Javascript Tag
 
 	<script type="text/javascript">
 		var emtiyaz_data = emtiyaz_data || [];
