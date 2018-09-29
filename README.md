@@ -19,7 +19,7 @@
 This part of document is for merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 ### Create Payment Request
-Get your `{private token}` from your partner merchant account and replace it in URL.
+Get your `{private token}` from your merchant account and replace it in URL.
 
 #### Request Endpoint
 
@@ -35,7 +35,7 @@ Send these parameters to the endpoint via `GET` or `POST` request.
 		"amount" : 50000,
 		"cancel" : "http://www.mystore.com/cancel/",
 		"success" : "http://www.mystore.com/success/",
-		"item" : "Description about item",
+		"item" : "5000 Toman Voucher",
 		"cellphone" : 989121111111,
 		"email" : "name@email.com"
 	}
@@ -67,11 +67,11 @@ This schema define the each parameter's value and type.
 		},
 		"cellphone" : {
 			"type" : "integer"
-			"description" : "User cellphone"
+			"description" : "buyer cellphone"
 		},
 		"email" : {
 			"type" : "string"
-			"description" : "User email address"
+			"description" : "buyer email address"
 		}
 	}
   
@@ -96,7 +96,7 @@ Also you must store the authority value for this transaction in your database fo
 
 ### Verify Transaction
 
-After the users make the payment with their points we redirect them to the `success` URL you previously provided to us.
+After the buyers make the payment with their points we redirect them to the `success` URL you previously provided to us.
 Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
@@ -135,7 +135,7 @@ This schema define the each parameter's value and type.
 
 #### Good Response
 
-Well now, The payment is complete and verified.
+Well now, The payment is complete and verified, It's time to deliver your goods or service to buyer.
 If you send correct request then the response should be same thing like that.
 
 	{
@@ -163,7 +163,7 @@ _Attention: Callback via Javascript is not secure._
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 	<script type="text/javascript">
 	window.onload = function() {
-		emtiyaz_callback('');
+		emtiyaz_callback('order');
 	};
 	</script>
 
@@ -174,7 +174,7 @@ Call `emtiyaz_callback()` method when a conversion happened by clicking on a but
 _Attention: Callback via Javascript is not secure._
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-	<button onclick="emtiyaz_callback('')">Register</button>
+	<button onclick="emtiyaz_callback('register')">Register</button>
 
 ### Callback Via API Endpoint
 
@@ -197,7 +197,7 @@ Read these parameters from users cookie and then send then to the API endpoint v
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
 		"mt_ip" : "46.209.239.50",
-		"mt_event" : "New User"
+		"mt_event" : "Order"
 	}
 
 #### Body Schema
@@ -213,7 +213,7 @@ Read these parameters from users cookie and then send then to the API endpoint v
 		},
 		"mt_event" : {
 			"type" : "string",
-			"description" : "Keyword about the event happened, like New-user, Order, Install"
+			"description" : "Keyword about the event happened, like Register, Order, Install"
 		}
 	}
 
