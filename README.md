@@ -50,27 +50,30 @@ This schema define the each parameter's values and type.
 		"currency" : {
 			"type" : "string",
 			"description" : "Currency is required, Those currency codes are supported IRR, IRT, POT, USD"
-
 		},
 		"amount" : {
 			"type" : "float"
 			"description" : "Amount is required"
-
 		},
 		"cancel" : {
 			"type" : "string"
+			"description" : "The cancel URL"
 		},
 		"success" : {
 			"type" : "string"
+			"description" : "The success URL"
 		},
 		"item" : {
 			"type" : "string"
+			"description" : "Details of transaction"
 		},
 		"cellphone" : {
 			"type" : "integer"
+			"description" : "User cellphone"
 		},
 		"email" : {
 			"type" : "string"
+			"description" : "User email address"
 		}
 	}
   
