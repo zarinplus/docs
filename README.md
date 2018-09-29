@@ -16,9 +16,8 @@
 	* [Create Payment Request](#payment-request)
 	* [Verify Transaction](#verify-transaction)
 * [Callback](#Callback)
-	* [Client Side](#callback-client-side)
-	* [Server Side](#callback-server-side)
-
+	* [Setup Callback Via Javascript](#callback-via-javascript)
+	* [Setup Callback Via P2P](#callback-via-p2p)
 
 
 <a name="payment"></a>
@@ -101,11 +100,11 @@ We redirect to your success or cancel URL
 
 	http://www.mystore.com/success/?authority={authority}
 
-Verify Endpoint
+#### Verify Endpoint
 
 	https://api.emtiyaz.app/{Merchant Token}/payment/verify.json
 
-Body
+#### Body
 
 	{
 		"currency" : "IRR",
@@ -113,7 +112,7 @@ Body
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
-Body Schema
+#### Body Schema
 
 	{
 	    "type" : "object",
@@ -131,11 +130,91 @@ Body Schema
 	    }
 	}
 
-Good Response
+#### Good Response
 
 	{
 		"status" : "100",
 		"message" : "Successful"
 	}
 
+
+<a name="callback"></a>
+## Callback
+Then users complate your offer emeditel you should give them the points.
+
+<a name="callback-via-javascript"></a>
+### Setup Callback Via Javascript
+Fast and simple just add this javascript tag in to your web pages.
+
+#### Javascript Tag:
+
+	<script type="text/javascript">
+		var emtiyaz_data = emtiyaz_data || [];
+		emtiyaz_data['notification'] = true;
+	</script>
+	
+	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
+
+#### Javascript Callback Onload
+
+	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
+	
+	<script type="text/javascript">
+	window.onload = function() {
+	  emtiyaz_callback('New User');
+	};
+	</script>
+
+#### Javascript Callback Onclick
+
+	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
+	<button onclick="emtiyaz_callback('register')">Register</button>
+
+<a name="callback-via-p2p"></a>
+### Setup Callback Via P2P
+
+#### API Endpoint
+	https://callback.emtiyaz.app/{token}
+
+#### Body
+
+	    {
+		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
+		"mt_ip" : "46.209.239.50",
+		"mt_event" : "New User"
+	    }
+
+#### Body Schema
+
+	  {
+	    "type" : "object",
+	    "properties" : {
+	      "mt_click_id" : {
+		  "type" : "string",
+		  "description" : "Click identity is required"
+	      },
+	      "mt_ip" : {
+		  "type" : "string",
+		  "description" : "The client IP address"
+	      },
+	      "mt_event" : {
+		 "type" : "string",
+		 "description" : "Keyword about the event happened, like New-user, Order, Install"
+	      }
+	    }
+	  }
+
+#### Good Response
+
+	  {
+	      "status" : "200",
+	      "message" : "Successful"
+	  }
+
+#### Bad Response
+
+	  {
+	      "status" : "400",
+	      "message" : "Invalid"
+	  }
 
