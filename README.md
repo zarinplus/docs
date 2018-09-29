@@ -85,13 +85,15 @@ If you send correct request then the response should be same thing like that.
 
 Now you should build the URL by replacing {authority} with the authority you received from previous step and then redirect to offerwall.
 
+Also you must store the authority value for this transaction in your database for next actions.
+
 	https://offerwall.emtiyaz.app/?authority={authority}
 
 
 <a name="verify-transaction"></a>
 ### Verify Transaction
 
-After the users make the payment with their points with redirect them to success URL you previously provided to us.
+After the users make the payment with their points we redirect them to the success URL you previously provided to us.
 Now you should verfiy the payment transaction.
 
 	http://www.mystore.com/success/?authority={authority}
@@ -102,6 +104,7 @@ Now you should verfiy the payment transaction.
 
 #### Body
 
+Now please find the transaction infomations by authority in your database and send them back for verfiy.
 Send these parameters to the endpoint via GET or POST request.
 
 	{
@@ -129,6 +132,7 @@ This schema define the each parameter's values and type.
 
 #### Good Response
 
+Well now, the payment in complete and verified.
 If you send correct request then the response should be same thing like that.
 
 	{
@@ -138,7 +142,7 @@ If you send correct request then the response should be same thing like that.
 
 <a name="callback"></a>
 ## Callback
-This part of document is for bidders (Advertisers), Then users complate your offer you should immediately give them the points and inform us the conversion.
+This part of document is for bidders (Advertisers), Then users complete your offer you should immediately inform us the conversion.
 
 <a name="callback-via-javascript"></a>
 ### Setup Callback Via Javascript
@@ -215,7 +219,7 @@ Send these parameters to the endpoint via GET or POST request.
 
 #### Good Response
 
-If you get good response then the user get the point immediately from you.
+Well now the user get the point immediately from you.
 If you send correct request then the response should be same thing like that.
 
 	{
