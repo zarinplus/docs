@@ -17,7 +17,7 @@
 <a name="payment"></a>
 ## Payment
 
-This part of document is for Merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
+This part of document is for merchants (Who accept payments via points), If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 <a name="payment-request"></a>
 ### Create Payment Request
