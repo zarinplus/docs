@@ -190,11 +190,11 @@ Get your {Private Token} from your partner account _(User settings)_ and replace
 
 #### Body
 
-We add **mt_click_id** parameter to your offer's landing page via GET method please send it back to our endpoint.
+We add **mt_click_id** parameter to your offer's landing page via GET method please send it back to our API endpoint.
 
 _Attention: You should store mt_click_id value to their users cookie by yourself or just add our javascript tag to your landing page.
 
-Read these parameters from users cookie and then callback the API endpoint via GET or POST request When conversion happened.
+Read these parameters from users cookie and then callback the API endpoint via GET or POST request when conversion happened.
 
 	{
 		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
@@ -221,7 +221,7 @@ Read these parameters from users cookie and then callback the API endpoint via G
 
 #### Good Response
 
-Well now the user get the point immediately from you.
+Well now, The user get the point(s) immediately from you.
 If you send correct request then the response should be same thing like that.
 
 	{
