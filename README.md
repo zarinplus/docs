@@ -22,17 +22,20 @@
 
 <a name="payment"></a>
 ## Payment
-If you would like to create payment requests from your server and confirm the transactions, Please use this document to implement the payment via our payment API.
+If you would like to create payment requests from your server and verify the transactions, Please read this document to implement the payment via our payment API.
 
 <a name="payment-request"></a>
 ### Create Payment Request
+Get your {Private Token} from your partner merchant account and replace it in URL.
 
 #### Request Endpoint
 
-	https://api.emtiyaz.app/{Merchant Token}/payment/request.json
+	https://api.emtiyaz.app/{Private Token}/payment/request.json
 	
 
 #### Body
+
+Send these parameters to the endpoint via GET or POST request.
 
 	{
 		"currency" : "IRR",
@@ -46,36 +49,37 @@ If you would like to create payment requests from your server and confirm the tr
 
 #### Body Schema
 
+This schema define the each parameter's values and type.
+
 	{
-	    "type" : "object",
-	    "properties" : {
-	      "currency" : {
-		  "type" : "string",
-		  "description" : "Those currency codes are supported IRR, IRT, POT, USD"
-	      },
-	      "amount" : {
-		  "type" : "float"
-	      },
-	      "cancel" : {
-		  "type" : "string"
-	      },
-	      "success" : {
-		  "type" : "string"
-	      },
+		"currency" : {
+			"type" : "string",
+			"description" : "Those currency codes are supported IRR, IRT, POT, USD"
+		},
+		"amount" : {
+			"type" : "float"
+		},
+		"cancel" : {
+			"type" : "string"
+		},
+		"success" : {
+			"type" : "string"
+		},
 		"item" : {
-		  "type" : "string"
-	      },
+			"type" : "string"
+		},
 		"cellphone" : {
-		  "type" : "integer"
-	      },
+			"type" : "integer"
+		},
 		"email" : {
-		  "type" : "string"
-	      }
-	    }
+			"type" : "string"
+		}
 	}
   
 #### Good Response
-  
+
+If you send correct request then the response should be same thing like that.
+
 	{
 		"status" : "200",
 		"message" : "Get the authority code",
@@ -83,14 +87,10 @@ If you would like to create payment requests from your server and confirm the tr
 	}
 
 #### Redirect to emtiyaz
-	https://emtiyaz.app/?authority={authority}
 
-#### Bad Response
+Now you should build the URL by replacing {authority} with the authority you received from previous step and then redirect to offerwall.
 
-	{
-		"status" : "400",
-		"message" : "Invalid token"
-	}
+	https://offerwall.emtiyaz.app/?authority={authority}
 
 
 <a name="verify-transaction"></a>
