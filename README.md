@@ -188,16 +188,16 @@ Get your `{Private Token}` from your partner account _(User settings)_ and repla
 
 #### Body
 
-We add `mt_click_id` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
+We add `emtiyaz_click` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
 
-_Attention: You should store mt_click_id value to their users cookie by yourself or just add the javascript tag to your landing page._
+_Attention: You should store emtiyaz_click value to their users cookie by yourself or just add the javascript tag to your landing page._
 
 Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` method.
 
 	{
-		"mt_click_id" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
-		"mt_ip" : "46.209.239.50",
-		"mt_event" : "Order"
+		"emtiyaz_click" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
+		"emtiyaz_ip" : "46.209.239.50",
+		"emtiyaz_event" : "Order"
 	}
 
 #### Body Schema
@@ -205,17 +205,29 @@ Read these parameters from users cookie and then send them to the API endpoint v
 This schema define the each parameter's type and value.
 
 	{
-		"mt_click_id" : {
+		"emtiyaz_click" : {
 			"type" : "string",
-			"description" : "Click identity is required"
+			"description" : "Click identity, The parameter emtiyaz_click is required"
 		},
-		"mt_ip" : {
+		"emtiyaz_ip" : {
 			"type" : "string",
 			"description" : "The client IP address"
 		},
-		"mt_event" : {
+		"emtiyaz_event" : {
 			"type" : "string",
 			"description" : "Keyword about the event happened, like Register, Order, Install"
+		},
+		"emtiyaz_ios_idfa" : {
+			"type" : "string",
+			"description" : "IOS device ID"
+		},
+		"emtiyaz_google_ad_id" : {
+			"type" : "string",
+			"description" : "Google advertising ID"
+		},
+		"emtiyaz_android_device_id" : {
+			"type" : "string",
+			"description" : "Android device ID"
 		}
 	}
 
