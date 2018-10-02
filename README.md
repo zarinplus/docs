@@ -107,7 +107,7 @@ Now you should verfiy the payment transaction.
 
 #### Body
 
-Now please find the transaction infomation by authority in your database and send them back for verfiy.
+Now please find the transaction infomation by `authority` in your database and send them back for verfiy.
 Send these parameters to the verify endpoint via `GET` or `POST` method.
 
 	{
@@ -123,13 +123,15 @@ This schema define the each parameter's type and value.
 	{
 		"currency" : {
 			"type" : "string",
-			"description" : "Those currency codes are supported IRR, IRT, POT, USD"
+			"description" : "Currency of the transaction, Those currency codes are supported IRR, IRT, POT, USD"
 		},
 		"amount" : {
 			"type" : "float"
+			"description" : "Amount of the transaction"
 		},
 		"authority" : {
 			"type" : "string"
+			"description" : "Authority that you received on your success URL"
 		}
 	}
 
@@ -163,7 +165,7 @@ _Attention: Callback via Javascript is not secure._
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
 	<script type="text/javascript">
 	window.onload = function() {
-		emtiyaz_callback('order');
+		emtiyaz_callback('Order');
 	};
 	</script>
 
@@ -182,9 +184,9 @@ Callback via API endpoint is too secure, We recommend implement this method inst
 
 #### API Endpoint
 
-Get your `{Private Token}` from your partner account _(User settings)_ and replace it in URL.
+Get your `{private token}` from your partner account _(User settings)_ and replace it in URL.
 
-	https://callback.emtiyaz.app/{Private Token}
+	https://callback.emtiyaz.app/{private token}
 
 #### Body
 
@@ -215,7 +217,7 @@ This schema define the each parameter's type and value.
 		},
 		"emtiyaz_event" : {
 			"type" : "string",
-			"description" : "Keyword about the event happened, like Register, Order, Install"
+			"description" : "The event type, like Register, Order, Install"
 		},
 		"emtiyaz_ios_idfa" : {
 			"type" : "string",
