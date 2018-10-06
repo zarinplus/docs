@@ -107,13 +107,11 @@ Now you should verfiy the payment transaction.
 
 #### Body
 
-Now please find the transaction infomation by `authority` in your database and send them back for verfiy.
-Send these parameters to the verify endpoint via `GET` or `POST` method.
+Now please, Send `authority` back for verfiy.
+Send this parameters to the verify endpoint via `GET` or `POST` method.
 
 	{
-		"currency" : "IRR",
-		"amount" : 50000,
-		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
+		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
 	}
 
 #### Body Schema
@@ -121,14 +119,6 @@ Send these parameters to the verify endpoint via `GET` or `POST` method.
 This schema define the each parameter's type and value.
 
 	{
-		"currency" : {
-			"type" : "string",
-			"description" : "Currency of the transaction, Those currency codes are supported IRR, IRT, POT, USD"
-		},
-		"amount" : {
-			"type" : "float"
-			"description" : "Amount of the transaction"
-		},
 		"authority" : {
 			"type" : "string"
 			"description" : "Authority that you received on your success URL"
@@ -141,8 +131,13 @@ Well now, The payment is complete and verified, It's time to deliver your goods 
 If you send correct request then the response should be same thing like that.
 
 	{
-		"status" : "100",
-		"message" : "Successful"
+		"status" : "200",
+		"message" : "Successful",
+		"amount" : "50000",
+		"currency" : "IRR",
+		"item" : "5000 Toman Voucher",
+		"email" : "name@email.com",
+		"cellphone" : "989121111111"
 	}
 
 ## Callback
