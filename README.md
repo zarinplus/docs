@@ -28,7 +28,7 @@ Get your `{public token}` from your merchant account and replace it in the javas
 
 #### Javascript Setup Button
 
-Create new object form `emtiyaz_button()`, Please visit [Live Demo].(https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html)
+Create new object form `emtiyaz_button()`, Please visit [Live Demo](https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html).
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
 	<script>
