@@ -7,6 +7,7 @@
 ## Table of Contents
 
 * [Payment](#payment)
+	* [Create Payment Button](#create-payment-button)
 	* [Create Payment Request](#create-payment-request)
 	* [Verify Transaction](#verify-transaction)
 * [Callback](#callback)
@@ -17,6 +18,34 @@
 ## Payment
 
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
+
+### Create Payment Button
+Get your `{public token}` from your merchant account and replace it in the javascript.
+
+#### Javascript Tag
+
+	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
+
+#### Javascript Setup Button
+
+Create new object form `emtiyaz_button()`, Please visit [live Demo](https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html)
+
+	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
+	<script>
+	    var button_one = new emtiyaz_button('button_one');
+	    button_one.public_token = 'f58400d3d3bb78ee5538fe36b57b83a3f4777d89';
+	    button_one.success_url = 'http://www.mystore.com/verify.php';
+	    button_one.cancel_url = 'http://www.mystore.com/cancel.php';
+	    button_one.amount = 50000;
+	    button_one.currency = 'IRR';
+	    button_one.cellphone = 989124966428;
+	    button_one.email = 'pooya@emtiyaz.app';
+	    button_one.item = 'Voucher 50000 IRR';
+	    button_one.width = 380;
+	    button_one.height = 680;
+	    button_one.text = 'Buy Now!'
+	    button_one.show();
+	</script>
 
 ### Create Payment Request
 Get your `{private token}` from your merchant account and replace it in the request endpoint.
