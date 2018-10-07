@@ -28,7 +28,7 @@ Get your `{public token}` from your merchant account and replace it in the javas
 
 #### Javascript Setup Button
 
-Create new object form `emtiyaz_button()`, Please visit [live Demo](https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html)
+Create new object form `emtiyaz_button()`, Please visit [live demo](https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html)
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
 	<script>
@@ -48,7 +48,7 @@ Create new object form `emtiyaz_button()`, Please visit [live Demo](https://emti
 	</script>
 
 ### Create Payment Request
-Get your `{private token}` from your merchant account and replace it in the request endpoint.
+Get your `{private token}` from your merchant account and replace it in the request endpoint. Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment)
 
 #### Request Endpoint
 
@@ -126,7 +126,7 @@ Also you must store the authority value for this transaction in your database fo
 ### Verify Transaction
 
 After the buyers make the payments with their points, We redirect them to the `success` URL you previously provided to us.
-Now you should verfiy the payment transaction.
+Now you should verfiy the payment transaction. Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment)
 
 	http://www.mystore.com/success/?authority={authority}
 
@@ -174,7 +174,7 @@ This part of document is for bidders _(Advertisers)_, When users complete your o
 
 ### Setup Javascript Tag
 
-Easily put this javascript tag to your landing page.
+Easily put this javascript tag to your landing page. Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/javascript/callback)
 
 #### Javascript Tag
 
@@ -204,7 +204,7 @@ _Attention: Callback via Javascript is not secure._
 
 ### Callback Via API Endpoint
 
-Callback via API endpoint is too secure, We recommend implement this method instead of javascript callback.
+Callback via API endpoint is too secure, We recommend implement this method instead of javascript callback. Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/callback)
 
 #### API Endpoint
 
