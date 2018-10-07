@@ -195,7 +195,7 @@ _Attention: Callback via Javascript is not secure._
 
 #### Javascript Callback On click
 
-Call `emtiyaz_callback()` method when a conversion happened by clicking on a button, _For example_ when user click on _Register_ button, Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/javascript/callback).
+Call `emtiyaz_callback()` method when a conversion happened by clicking on a button, _For example_ when user click on _Register_ button, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/javascript/callback).
 
 _Attention: Callback via Javascript is not secure._
 
@@ -260,7 +260,7 @@ This schema define the each parameter's type and value.
 #### Good Response
 
 Well now, The user get the points immediately from you.
-If you send correct request then the response should be same thing like that, Please watch [sample codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/callback).
+If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/callback).
 
 	{
 		"status" : "200",
