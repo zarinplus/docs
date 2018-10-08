@@ -7,11 +7,11 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Button](#create-payment-button)
-	* [Create Payment Request](#create-payment-request)
-	* [Verify Transaction](#verify-transaction)
+	* [Create Payment Button Via Javascript](#create-payment-button-via-api-javascript)
+	* [Create Payment Request Via API](#create-payment-request-via-api)
+	* [Verify Transaction Via API](#verify-transaction-via-api)
 * [Callback](#callback)
-	* [Setup Javascript Tag](#setup-javascript-tag)
+	* [Callback Via Javascript](#callback-via-javascript)
 	* [Callback Via API Endpoint](#callback-via-api-endpoint)
 
 
@@ -19,7 +19,7 @@
 
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
-### Create Payment Button
+### Create Payment Button Via Javascript
 Get your `{public token}` from your merchant account and replace it in the javascript.
 
 #### Javascript Tag
@@ -47,7 +47,7 @@ Create a new object from `emtiyaz_button()`, Please visit [Live Demo](https://em
 	    button_one.show();
 	</script>
 
-### Create Payment Request
+### Create Payment Request Via API
 Get your `{private token}` from your merchant account and replace it in the request endpoint. 
 
 #### Request Endpoint
@@ -123,7 +123,7 @@ Also you must store the authority value for this transaction in your database fo
 	https://offerwall.emtiyaz.app/?authority={authority}
 
 
-### Verify Transaction
+### Verify Transaction Via API
 
 After the buyers make the payments with their points, We redirect them to the `success` URL you previously provided to us.
 Now you should verfiy the payment transaction.
@@ -172,7 +172,7 @@ If you send correct request then the response should be same thing like that, Pl
 ## Callback
 This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
 
-### Setup Javascript Tag
+### Callback Via Javascript
 
 Easily put this javascript tag to your landing page.
 
