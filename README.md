@@ -11,6 +11,8 @@
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 * [Callback](#callback)
+
+	* [Callback Via Mobile Attribution Platforms](#callback-via-mobile-attribution-platforms)
 	* [Callback Via Javascript](#callback-via-javascript)
 	* [Callback Via API Endpoint](#callback-via-api-endpoint)
 
@@ -171,6 +173,9 @@ If you send correct request then the response should be same thing like that, Pl
 
 ## Callback
 This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
+
+### Callback Via Mobile Attribution Platforms
+Emtiyaz is integrated and listed as partner with [Adjust](https://www.adjust.com/technology-partners/), [Tapstream](https://tapstream.com/ad-networks/), [Tune](https://help.tune.com/marketing-console/integrated-ad-networks-and-publishers/)
 
 ### Callback Via Javascript
 
