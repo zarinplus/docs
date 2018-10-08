@@ -176,11 +176,10 @@ This part of document is for bidders _(Advertisers)_, When users complete your o
 
 ### Callback Via Mobile Attribution Platforms 
 
-Emtiyaz is integrated and listed as partner with [Adjust](https://www.adjust.com/technology-partners/), [Tapstream](https://tapstream.com/ad-networks/), [Tune](https://help.tune.com/marketing-console/integrated-ad-networks-and-publishers/) 
+Emtiyaz is integrated and listed as partner with [Adjust](https://www.adjust.com/technology-partners/), [Tapstream](https://tapstream.com/ad-networks/), [Tune](https://help.tune.com/marketing-console/integrated-ad-networks-and-publishers/). Using mobile attribution platforms are strongly recommended for tracking app install event.
+
 
 You just need use your campaign url as your offer url to track app install event, Mobile attribution platforms are automatically run our callback API endpoint to inform us a conversion.
-
-Using mobile attribution platforms are strongly recommended for tracking app install event.
 
 ### Callback Via Javascript
 
