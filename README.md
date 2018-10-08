@@ -7,7 +7,7 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Button Via Javascript](#create-payment-button-via-api-javascript)
+	* [Create Payment Button Via Javascript](#create-payment-button-via-javascript)
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 * [Callback](#callback)
