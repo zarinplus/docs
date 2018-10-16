@@ -33,19 +33,19 @@ Create a new object from `emtiyaz_button()`, Please visit [Live Demo](https://em
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
 	<script>
-	    var button_one = new emtiyaz_button('button_one');
-	    button_one.public_token = 'f58400d3d3bb78ee5538fe36b57b83a3f4777d89';
-	    button_one.success_url = 'http://www.mystore.com/verify.php';
-	    button_one.cancel_url = 'http://www.mystore.com/cancel.php';
-	    button_one.amount = 50000;
-	    button_one.currency = 'IRR';
-	    button_one.cellphone = 989124966428;
-	    button_one.email = 'pooya@emtiyaz.app';
-	    button_one.item = 'Voucher 50000 IRR';
-	    button_one.width = 380;
-	    button_one.height = 680;
-	    button_one.text = 'Buy Now!'
-	    button_one.show();
+	    var button_popup = new emtiyaz_button('button_popup');
+	    button_popup.public_token = '{public token}';
+	    button_popup.success_url = 'https://emtiyaz-app.github.io/samplecodes/javascript/payment/success.html';
+	    button_popup.cancel_url = 'https://emtiyaz-app.github.io/samplecodes/javascript/payment/cancel.html';
+	    button_popup.amount = 5000;
+	    button_popup.currency = 'IRR';
+	    button_popup.cellphone = 989124966428;
+	    button_popup.email = 'pooya@emtiyaz.app';
+	    button_popup.item = 'Voucher 50000 IRR';
+	    button_popup.width = 380;
+	    button_popup.height = 680;
+	    button_popup.text = 'Buy Now!'
+	    button_popup.show();
 	</script>
 
 ### Create Payment Request Via API
