@@ -7,11 +7,11 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Button Via Javascript](#create-payment-button-via-javascript)
+	* [Create Payment Button Via Javascript SDK](#create-payment-button-via-javascript-sdk)
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 * [Callback](#callback)
-	* [Callback Via Javascript](#callback-via-javascript)
+	* [Callback Via Javascript SDK](#callback-via-javascript-sdk)
 	* [Callback Via API Endpoint](#callback-via-api-endpoint)
 	* [Callback Via Mobile Attribution Platforms](#callback-via-mobile-attribution-platforms)
 
@@ -20,7 +20,7 @@
 
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
-### Create Payment Button Via Javascript
+### Create Payment Button Via Javascript SDK
 Get your `{public token}` from your merchant account and replace it in the javascript.
 
 #### Javascript Tag
@@ -173,7 +173,7 @@ If you send correct request then the response should be same thing like that, Pl
 ## Callback
 This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
 
-### Callback Via Javascript
+### Callback Via Javascript SDK
 
 Easily put this javascript tag to your landing page.
 
