@@ -175,33 +175,11 @@ This part of document is for bidders _(Advertisers)_, When users complete your o
 
 ### Callback Via Javascript SDK
 
-Easily put this javascript tag to your landing page.
+Easily put this javascript tag into your landing page to setup cookie.
 
 #### Javascript Tag
 
 	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-
-#### Javascript Callback On Page Load
-
-Call `emtiyaz_callback()` method when a conversion happened by visiting a web page, _For example_ when `/thankyou.html` page visited.
-
-_Attention: Callback via Javascript is not secure._
-
-	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-	<script type="text/javascript">
-	window.onload = function() {
-		emtiyaz_callback('Order');
-	};
-	</script>
-
-#### Javascript Callback On click
-
-Call `emtiyaz_callback()` method when a conversion happened by clicking on a button, _For example_ when user click on _Register_ button, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/javascript/callback).
-
-_Attention: Callback via Javascript is not secure._
-
-	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-	<button onclick="emtiyaz_callback('register')">Register</button>
 
 ### Callback Via API Endpoint
 
@@ -217,7 +195,7 @@ Get your `{private token}` from your partner account _(User settings)_ and repla
 
 We add `emtiyaz_click` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
 
-_Attention: You should store emtiyaz_click value to their users cookie by yourself or just add the javascript tag to your landing page._
+_Attention: You should store emtiyaz_click value to their users cookie by yourself or just add the javascript tag to your landing page to create the cookies._
 
 Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` method.
 
