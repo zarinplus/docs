@@ -10,6 +10,7 @@
 	* [Create Payment Button Via Javascript SDK](#create-payment-button-via-javascript-sdk)
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
+	* [Reverse Transaction Via API](#reverse-transaction-via-api)
 * [Callback](#callback)
 	* [Callback Via Javascript SDK](#callback-via-javascript-sdk)
 	* [Callback Via API Endpoint](#callback-via-api-endpoint)
@@ -169,6 +170,49 @@ If you send correct request then the response should be same thing like that, Pl
 		"email" : "name@email.com",
 		"cellphone" : "989121111111"
 	}
+
+### Reverse Transaction Via API
+
+You can reverse any successful transaction. 
+
+#### Reverse Endpoint
+
+	https://api.emtiyaz.app/{private token}/payment/reverse.json
+
+#### Body
+
+Now please, Send `authority` back for reverse.
+Send this parameters to the verify endpoint via `GET` or `POST` method.
+
+	{
+		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
+	}
+
+#### Body Schema
+
+This schema define the each parameter's type and value.
+
+	{
+		"authority" : {
+			"type" : "string"
+			"description" : "Authority that you received on your success URL"
+		}
+	}
+
+#### Good Response
+
+Well now, The transaction successfully reversed.
+
+	{
+		"status" : "500",
+		"message" : "Reversed",
+		"amount" : "50000",
+		"currency" : "IRR",
+		"item" : "5000 Toman Voucher",
+		"email" : "name@email.com",
+		"cellphone" : "989121111111"
+	}
+
 
 ## Callback
 This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
