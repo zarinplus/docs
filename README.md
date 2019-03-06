@@ -164,6 +164,7 @@ If you send correct request then the response should be same thing like that, Pl
 	{
 		"status" : "200",
 		"message" : "Successful",
+		"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c"
 		"amount" : "50000",
 		"currency" : "IRR",
 		"item" : "5000 Toman Voucher",
@@ -181,11 +182,11 @@ You can reverse any successful transaction.
 
 #### Body
 
-Now please, Send `authority` back for reverse.
+Now please, Send `authority` OR `reference` back for reverse.
 Send this parameters to the verify endpoint via `GET` or `POST` method.
 
 	{
-		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
+		"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c"
 	}
 
 #### Body Schema
@@ -193,9 +194,9 @@ Send this parameters to the verify endpoint via `GET` or `POST` method.
 This schema define the each parameter's type and value.
 
 	{
-		"authority" : {
+		"reference" : {
 			"type" : "string"
-			"description" : "Authority that you received on your success URL"
+			"description" : "The reference that you received on verify method"
 		}
 	}
 
