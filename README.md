@@ -308,7 +308,7 @@ You just need use your campaign url as your offer url to track app install event
 
 ## List of Response Codes
 
-|  Response Code	    | Response Message       |
+|  Code	    | Message       |
 | ------------- |:-------------:|
 | 401 | Invalid point value |
 | 402 | Invalid amount or currency |
