@@ -306,9 +306,9 @@ Emtiyaz is integrated and listed as partner with [Adjust](https://www.adjust.com
 You just need use your campaign url as your offer url to track app install event, Mobile attribution platforms are automatically run our callback API endpoint to inform us a conversion.
 
 
-## List of Response Error Codes
+## List of Response Codes
 
-|  Error Code	    | Error Message       |
+|  Response Code	    | Response Message       |
 | ------------- |:-------------:|
 | 401 | Invalid point value |
 | 402 | Invalid amount or currency |
