@@ -40,8 +40,8 @@ Create a new object from `emtiyaz_button()`, Please visit [Live Demo](https://em
 	    button_popup.cancel_url = 'https://emtiyaz-app.github.io/samplecodes/javascript/payment/cancel.html';
 	    button_popup.amount = 5000;
 	    button_popup.currency = 'IRR';
-	    button_popup.cellphone = 989124966428;
-	    button_popup.email = 'pooya@emtiyaz.app';
+	    button_popup.cellphone = 989121111111;
+	    button_popup.email = 'yourname@domain.com';
 	    button_popup.item = 'Voucher 50000 IRR';
 	    button_popup.width = 380;
 	    button_popup.height = 680;
@@ -68,7 +68,7 @@ Send these parameters to the request endpoint via `GET` or `POST` method.
 		"success" : "http://www.mystore.com/success/",
 		"item" : "5000 Toman Voucher",
 		"cellphone" : 989121111111,
-		"email" : "name@email.com"
+		"email" : "yourname@domain.com"
 	}
 
 #### Body Schema
