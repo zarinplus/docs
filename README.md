@@ -1,4 +1,4 @@
-![Emtiyaz Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg)
+![Emtiyaz Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
 
 # Emtiyaz Documentation
 
