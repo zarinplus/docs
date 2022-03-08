@@ -10,10 +10,6 @@
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 	* [Reverse Transaction Via API](#reverse-transaction-via-api)
-* [Callback](#callback)
-	* [Callback Via API Endpoint](#callback-via-api-endpoint)
-	* [Callback Via Mobile Attribution Platforms](#callback-via-mobile-attribution-platforms)
-
 
 ## Payment
 
@@ -184,81 +180,6 @@ Well now, The transaction successfully reversed.
 		"cellphone" : "989121111111"
 	}
 
-
-## Callback
-This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
-
-### Callback Via API Endpoint
-
-Callback via API endpoint is too secure, We recommend implement this method instead of javascript callback.
-
-#### API Endpoint
-
-Get your `{private token}` from your partner account _(User settings)_ and replace it in URL.
-
-	https://callback.emtiyaz.app/{private token}
-
-#### Body
-
-We add `emtiyaz_click` parameter to your offer's landing page via `GET` method you should send it back to API endpoint.
-
-_Attention: You should store emtiyaz_click value to their users cookie by yourself or just add the javascript tag to your landing page to create the cookies._
-
-Read these parameters from users cookie and then send them to the API endpoint via `GET` or `POST` method.
-
-	{
-		"emtiyaz_click" : "80ee0fd84e32442122d68ce9bd3df1454f577a97",
-		"emtiyaz_ip" : "46.209.239.50",
-		"emtiyaz_event" : "Order"
-	}
-
-#### Body Schema
-
-This schema define the each parameter's type and value.
-
-	{
-		"emtiyaz_click" : {
-			"type" : "string",
-			"description" : "Click identity, The parameter emtiyaz_click is required"
-		},
-		"emtiyaz_ip" : {
-			"type" : "string",
-			"description" : "The client IP address"
-		},
-		"emtiyaz_event" : {
-			"type" : "string",
-			"description" : "The event type, like Register, Order, Install"
-		},
-		"emtiyaz_ios_idfa" : {
-			"type" : "string",
-			"description" : "IOS device ID"
-		},
-		"emtiyaz_google_ad_id" : {
-			"type" : "string",
-			"description" : "Google advertising ID"
-		},
-		"emtiyaz_android_device_id" : {
-			"type" : "string",
-			"description" : "Android device ID"
-		}
-	}
-
-#### Good Response
-
-Well now, The user get the points immediately from you.
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/callback).
-
-	{
-		"status" : "200",
-		"message" : "Successful"
-	}
-
-#### Bad Response
-
-	{
-		"status" : "400",
-		"message" : "Invalid"
-	}
 
 ## List of Response Codes
 
