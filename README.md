@@ -1,4 +1,4 @@
-![Emtiyaz Logo](https://static.emtiyaz.app/logo/png/logo-color-blacktxt-fa-small.png)
+![Emtiyaz Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg)
 
 # Emtiyaz Documentation
 
