@@ -1,18 +1,16 @@
-![Emtiyaz Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
+![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
 
-# Emtiyaz Documentation
+# Zarinplus Documentation
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./license)
 
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Button Via Javascript SDK](#create-payment-button-via-javascript-sdk)
 	* [Create Payment Request Via API](#create-payment-request-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 	* [Reverse Transaction Via API](#reverse-transaction-via-api)
 * [Callback](#callback)
-	* [Callback Via Javascript SDK](#callback-via-javascript-sdk)
 	* [Callback Via API Endpoint](#callback-via-api-endpoint)
 	* [Callback Via Mobile Attribution Platforms](#callback-via-mobile-attribution-platforms)
 
@@ -21,40 +19,12 @@
 
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
-### Create Payment Button Via Javascript SDK
-Get your `{public token}` from your merchant account and replace it in the javascript.
-
-#### Javascript Tag
-
-	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
-
-#### Javascript Setup Button
-
-Create a new object from `emtiyaz_button()`, Please visit [Live Demo](https://emtiyaz-app.github.io/samplecodes/javascript/payment/checkout-popup.html).
-
-	<script type="text/javascript" src="https://static.emtiyaz.app/js/button.js"></script>
-	<script>
-	    var button_popup = new emtiyaz_button('button_popup');
-	    button_popup.public_token = '{public token}';
-	    button_popup.success_url = 'https://emtiyaz-app.github.io/samplecodes/javascript/payment/success.html';
-	    button_popup.cancel_url = 'https://emtiyaz-app.github.io/samplecodes/javascript/payment/cancel.html';
-	    button_popup.amount = 5000;
-	    button_popup.currency = 'IRR';
-	    button_popup.cellphone = 989121111111;
-	    button_popup.email = 'yourname@domain.com';
-	    button_popup.item = 'Voucher 50000 IRR';
-	    button_popup.width = 380;
-	    button_popup.height = 680;
-	    button_popup.text = 'Buy Now!'
-	    button_popup.show();
-	</script>
-
 ### Create Payment Request Via API
 Get your `{private token}` from your merchant account and replace it in the request endpoint. 
 
 #### Request Endpoint
 
-	https://api.emtiyaz.app/{private token}/payment/request.json
+	https://api.zarinplus.com/{private-token}/payment/request.json
 	
 
 #### Body
@@ -108,7 +78,7 @@ This schema define the each parameter's type and value.
   
 #### Good Response
 
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment).
+If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/zarinplus/samplecodes/tree/master/php/payment).
 
 	{
 		"status" : "200",
@@ -122,7 +92,7 @@ Now you should build the offerwall's URL by replacing `{authority}` with the aut
 
 Also you must store the authority value for this transaction in your database for next action.
 
-	https://offerwall.emtiyaz.app/?authority={authority}
+	https://api.zarinplus.com/?authority={authority}
 
 
 ### Verify Transaction Via API
@@ -218,14 +188,6 @@ Well now, The transaction successfully reversed.
 ## Callback
 This part of document is for bidders _(Advertisers)_, When users complete your offer you should immediately inform us that a conversion happened.
 
-### Callback Via Javascript SDK
-
-Easily put this javascript tag into your landing page to setup cookie.
-
-#### Javascript Tag
-
-	<script type="text/javascript" src="https://static.emtiyaz.app/js/tracking.js"></script>
-
 ### Callback Via API Endpoint
 
 Callback via API endpoint is too secure, We recommend implement this method instead of javascript callback.
@@ -297,14 +259,6 @@ If you send correct request then the response should be same thing like that, Pl
 		"status" : "400",
 		"message" : "Invalid"
 	}
-
-### Callback Via Mobile Attribution Platforms 
-
-Emtiyaz is integrated and listed as partner with [Adjust](https://www.adjust.com/technology-partners/), [Tapstream](https://tapstream.com/ad-networks/), [Tune](https://help.tune.com/marketing-console/integrated-ad-networks-and-publishers/). Using mobile attribution platforms are strongly recommended for tracking app install event.
-
-
-You just need use your campaign url as your offer url to track app install event, Mobile attribution platforms are automatically run our callback API endpoint to inform us a conversion.
-
 
 ## List of Response Codes
 
