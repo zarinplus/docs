@@ -1,6 +1,6 @@
 ![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
 
-# Zarinplus Documentation
+# Zarinplus Docs
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./license)
 
