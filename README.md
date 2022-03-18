@@ -20,7 +20,7 @@ To make a request transaction buyers should use this API.
 
 #### Request Endpoint
 
-	https://api.zarinplus.com/payment/request.json
+	https://api.zarinplus.com/payment/request
 	
 
 #### Body
@@ -128,7 +128,7 @@ Our authentication is with authorization key and they should confirm the payment
 
 #### Process Endpoint
 
-	https://api.zarinplus.com/payment/process.json
+	https://api.zarinplus.com/payment/process
 
 #### Body
 
@@ -176,7 +176,7 @@ they should cancel the payment transaction with their `{authorization token}` fr
 
 #### Cancel Endpoint
 
-	https://api.zarinplus.com/payment/cancel.json
+	https://api.zarinplus.com/payment/cancel
 
 #### Body
 
@@ -211,7 +211,7 @@ If you send correct request then the response should be same thing like that, Pl
 
 #### Verify Endpoint
 
-	https://api.zarinplus.com/payment/verify.json
+	https://api.zarinplus.com/payment/verify
 
 #### Body
 
@@ -260,7 +260,7 @@ You can reverse any successful transaction.
 
 #### Reverse Endpoint
 
-	https://api.zarinplus.com/payment/reverse.json
+	https://api.zarinplus.com/payment/reverse
 
 #### Body
 
