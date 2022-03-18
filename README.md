@@ -16,11 +16,11 @@
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
 ### Create Payment Request Via API
-Get your `{private token}` from your merchant account and replace it in the request endpoint. 
+To make a request transaction buyers should use this API. 
 
 #### Request Endpoint
 
-	https://api.zarinplus.com/{private-token}/payment/request.json
+	https://api.zarinplus.com/payment/request.json
 	
 
 #### Body
@@ -118,12 +118,17 @@ Also you must store the authority value for this transaction in your database fo
 
 ### Process Transaction Via API
 
-After the buyers make the payments request, we asked them to process the transaction
-they should confirm the payment transaction with their `{private token}` from their merchant account and replace it in the request endpoint..
+After the buyers make the payments request, we asked them to process the transaction.
+Our authentication is with authorization key and they should confirm the payment transaction with their `{authorization token}` from their merchant account that will be sent from headers.
+
+	{
+		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
+	}
+
 
 #### Process Endpoint
 
-	https://api.emtiyaz.app/{private_token}/payment/process.json
+	https://api.zarinplus.com/payment/process.json
 
 #### Body
 
@@ -163,11 +168,15 @@ If you send correct request then the response should be same thing like that, Pl
 ### Cancel Transaction Via API
 
 After the buyers make the payments request, we asked them to process the transaction
-they should cancel the payment transaction with their `{private token}` from their merchant account and replace it in the request endpoint..
+they should cancel the payment transaction with their `{authorization token}` from their merchant account that will be sent from headers.
+	
+	{
+		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
+	}
 
 #### Cancel Endpoint
 
-	https://api.emtiyaz.app/{private_token}/payment/cancel.json
+	https://api.zarinplus.com/payment/cancel.json
 
 #### Body
 
@@ -202,7 +211,7 @@ If you send correct request then the response should be same thing like that, Pl
 
 #### Verify Endpoint
 
-	https://api.emtiyaz.app/{private token}/payment/verify.json
+	https://api.zarinplus.com/payment/verify.json
 
 #### Body
 
@@ -251,7 +260,7 @@ You can reverse any successful transaction.
 
 #### Reverse Endpoint
 
-	https://api.emtiyaz.app/{private token}/payment/reverse.json
+	https://api.zarinplus.com/payment/reverse.json
 
 #### Body
 
