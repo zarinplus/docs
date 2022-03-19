@@ -8,6 +8,8 @@
 
 * [Payment](#payment)
 	* [Create Payment Request Via API](#create-payment-request-via-api)
+        * [Process Transaction Via API](#process-transaction-via-api)
+	* [Cancel Transaction Via API](#cancel-transaction-via-api)
 	* [Verify Transaction Via API](#verify-transaction-via-api)
 	* [Reverse Transaction Via API](#reverse-transaction-via-api)
 
