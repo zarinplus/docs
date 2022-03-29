@@ -201,6 +201,7 @@ If you send correct request then the response should be same thing like that.
     		"message": "You have canceled merchant"
 	}
 
+### Verify Transaction
 
 #### Verify Endpoint
 
@@ -233,7 +234,7 @@ This schema define the each parameter's type and value.
 #### Good Response
 
 Well now, The payment is complete and verified, It's time to deliver your goods or services to buyer.
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment).
+If you send correct request then the response should be same thing like that.
 
 	{
 		"status" : "200",
@@ -256,7 +257,6 @@ You can reverse any successful transaction.
 
 #### Body
 
-Now please, Send `authority` OR `reference` back for reverse.
 Send this parameters to the verify endpoint via `GET` or `POST` method.
 
 	{
