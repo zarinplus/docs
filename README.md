@@ -7,17 +7,17 @@
 ## Table of Contents
 
 * [Payment](#payment)
-	* [Create Payment Request Via API](#create-payment-request-via-api)
-	* [Process Transaction Via API](#process-transaction-via-api)
-	* [Cancel Transaction Via API](#cancel-transaction-via-api)
-	* [Verify Transaction Via API](#verify-transaction-via-api)
-	* [Reverse Transaction Via API](#reverse-transaction-via-api)
+	* [Create Payment Request](#create-payment-request)
+	* [Process Transaction](#process-transaction)
+	* [Cancel Transaction](#cancel-transaction)
+	* [Verify Transaction](#verify-transaction)
+	* [Reverse Transaction](#reverse-transaction)
 
 ## Payment
 
 This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
-### Create Payment Request Via API
+### Create Payment Request
 To make a request transaction buyers should use this API. 
 
 #### Request Endpoint
@@ -27,7 +27,7 @@ To make a request transaction buyers should use this API.
 
 #### Body
 
-Send these parameters to the request endpoint via `GET` or `POST` method.
+Send these parameters to the request endpoint via `POST` method.
 
 	{
 		"currency" : "IRR",
@@ -36,11 +36,11 @@ Send these parameters to the request endpoint via `GET` or `POST` method.
 		"success" : "http://www.mystore.com/success/",
 		"item" : "5000 Toman Voucher",
 		"cellphone" : 989121111111,
-		"email" : "yourname@domain.com",
-		"token" : "mystoretoken",
-		"custom_logo" : "http://www.mystore.com/logo.png",
-		"custom_name" : "mystore",
-		"custom_domain" : "http://www.mystore.com"
+		"email" : "yourname@mystore.com",
+		"token" : "xxxxxxxxx",
+		"custom_logo" : "https://www.mystore.com/logo.png",
+		"custom_name" : "Mystore",
+		"custom_domain" : "https://www.mystore.com",
 		"redirect" : 1,
 	}
 
@@ -51,7 +51,7 @@ This schema define the each parameter's type and value.
 	{
 		"currency" : {
 			"type" : "string",
-			"description" : "Currency is required, Those currency codes are supported IRR, IRT, EMZ, USD"
+			"description" : "Currency is required, Those currency codes are supported `IRR`, `EMZ` "
 		},
 		"amount" : {
 			"type" : "float"
@@ -79,11 +79,11 @@ This schema define the each parameter's type and value.
 		},
 		"token" : {
 			"type" : "string"
-			"description" : "Token is required"
+			"description" : "Merchant Token is required"
 		},
 		"custom_logo" : {
 		   "type" : "string"
-		   "description": "The logo image URL"
+		   "description": "The Merchant logo image URL"
 		},
 		"custom_name" : {
 		   "type" : "string"
@@ -101,7 +101,7 @@ This schema define the each parameter's type and value.
   
 #### Good Response
 
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/zarinplus/samplecodes/tree/master/php/payment).
+If you send correct request then the response should be same thing like that.
 
 	{
 		"status" : "200",
@@ -109,19 +109,11 @@ If you send correct request then the response should be same thing like that, Pl
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
-#### Redirect To Offerwall
-
-Now you should build the offerwall's URL by replacing `{authority}` with the authority you received from previous step and then redirect to offerwall.
-
-Also you must store the authority value for this transaction in your database for next action.
-
-	https://api.zarinplus.com/?authority={authority}
 
 
-### Process Transaction Via API
+### Process Transaction
 
-After the buyers make the payments request, we asked them to process the transaction.
-Our authentication is with authorization key and they should confirm the payment transaction with their `{authorization token}` from their merchant account that will be sent from headers.
+We asked user to process the transaction. Our user authentication send via header request and user should confirm the payment transaction in-app.
 
 	{
 		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
@@ -134,8 +126,8 @@ Our authentication is with authorization key and they should confirm the payment
 
 #### Body
 
-Now please, Send `authority` and `{private token}` and the `wallet_id` back for confirm.
-Send this parameters to the verify endpoint via `GET` or `POST` method.
+Now please, Send `authority` and the `wallet_id` back for confirm.
+Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
@@ -149,28 +141,27 @@ This schema define the each parameter's type and value.
 	{
 		"authority" : {
 			"type" : "string"
-			"description" : "Authority that you received on your success URL"
+			"description" : "Authority key which you received from payment request"
 		},
 		"wallet_id" : {
 		   "type" : "integer"
-		   "description": "The wallet_id for the currency that you have chosen"
+		   "description": "The currency that you have chosen"
 		},
 	}
 
 #### Good Response
 
 Well now, The payment is confirmed. It's time to waite for your transaction to be confirmed.
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment).
+If you send correct request then the response should be same thing like that.
 
 	{
     		"status": 200,
-    		"message": "Successful merchant - code 100"
+    		"message": "Successful merchant"
 	}
 
-### Cancel Transaction Via API
+### Cancel Transaction
 
-After the buyers make the payments request, we asked them to process the transaction
-they should cancel the payment transaction with their `{authorization token}` from their merchant account that will be sent from headers.
+Users can cancel the transaction. Our user authentication send via header request and user should confirm the payment transaction in-app.
 	
 	{
 		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
@@ -183,7 +174,7 @@ they should cancel the payment transaction with their `{authorization token}` fr
 #### Body
 
 Now please, Send `authority` and `{private token}` and the `wallet_id` back for confirm.
-Send this parameters to the verify endpoint via `GET` or `POST` method.
+Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
@@ -196,18 +187,18 @@ This schema define the each parameter's type and value.
 	{
 		"authority" : {
 			"type" : "string"
-			"description" : "Authority that you received on your success URL"
+			"description" : "Authority key which you received from payment request"
 		}
 	}
 
 #### Good Response
 
 The payment is canceled as you wished for.
-If you send correct request then the response should be same thing like that, Please watch [Sample Codes](https://github.com/emtiyaz-app/samplecodes/tree/master/php/payment).
+If you send correct request then the response should be same thing like that.
 
 	{
     		"status": 200,
-    		"message": "You have canceled merchant- id 5"
+    		"message": "You have canceled merchant"
 	}
 
 
@@ -217,12 +208,11 @@ If you send correct request then the response should be same thing like that, Pl
 
 #### Body
 
-Now please, Send `authority` back for verfiy.
-Send this parameters to the verify endpoint via `GET` or `POST` method.
+Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"token" : "storetoken
+		"token" : "xxxxxx"
 	}
 
 #### Body Schema
@@ -232,11 +222,11 @@ This schema define the each parameter's type and value.
 	{
 		"authority" : {
 			"type" : "string"
-			"description" : "Authority that you received on your success URL"
+			"description" : "Authority key which you received from payment request"
 		},
 		"token" : {
 		   "type" : "string
-		   "description": "The store token wich is required"
+		   "description": "The merchant token is required"
 		}
 	}
 
@@ -252,11 +242,11 @@ If you send correct request then the response should be same thing like that, Pl
 		"amount" : "50000",
 		"currency" : "IRR",
 		"item" : "5000 Toman Voucher",
-		"email" : "name@email.com",
+		"email" : "yourname@mystore.com",
 		"cellphone" : "989121111111"
 	}
 
-### Reverse Transaction Via API
+### Reverse Transaction
 
 You can reverse any successful transaction. 
 
