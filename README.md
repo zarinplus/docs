@@ -113,7 +113,7 @@ If you send correct request then the response should be same thing like that.
 
 ### Process Transaction
 
-We asked user to process the transaction. Our user authentication send via header request and user should confirm the payment transaction in-app.
+We asked user to process the transaction. User authentication send via header request and user should confirm the payment transaction in-app.
 
 	{
 		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
@@ -161,7 +161,7 @@ If you send correct request then the response should be same thing like that.
 
 ### Cancel Transaction
 
-Users can cancel the transaction. Our user authentication send via header request and user should confirm the payment transaction in-app.
+Users can cancel the transaction. User authentication send via header request and user should confirm the payment transaction in-app.
 	
 	{
 		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
@@ -234,7 +234,7 @@ This schema define the each parameter's type and value.
 
 #### Good Response
 
-Well now, The payment is complete and verified, It's time to deliver your goods or services to your buyer.
+Well now, The payment is completed and verified, It's time to deliver your goods or services to your buyer.
 If you send correct request then the response should be same thing like that.
 
 	{
