@@ -1,3 +1,9 @@
+![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
+
+## Zarinplus Payment Docs 
+
+This part of document is for merchants _(Who accept payments via EMZ)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
+
 ## Table of Contents
 
 * [Payment](#payment)
@@ -6,12 +12,6 @@
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
-
-## Zarinplus Payment Docs 
-
-![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
-
-This part of document is for merchants _(Who accept payments via EMZ)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
 ### Create Payment Request
 To make a request transaction merchant should use this APIs. 
