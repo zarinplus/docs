@@ -12,7 +12,7 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
-	* [List of Status](#list-of-status)
+	* [List of Status Codes](#list-of-status-codes)
 
 ### Create Payment Request
 To make a request transaction merchant should use this APIs. 
@@ -297,7 +297,7 @@ Well now, The transaction successfully reversed.
 	}
 
 
-## List of Status
+## List of Status Codes
 
 |  Code	    | Message       |
 | ------------- |:-------------:|
