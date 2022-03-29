@@ -15,10 +15,10 @@
 
 ## Payment
 
-This part of document is for merchants _(Who accept payments via points)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
+This part of document is for merchants _(Who accept payments via EMZ)_, If you would like to create payment requests from your server and verify the transactions, Please read this document to understand how to implement payment via request endpoint.
 
 ### Create Payment Request
-To make a request transaction buyers should use this API. 
+To make a request transaction merchant should use this APIs. 
 
 #### Request Endpoint
 
@@ -36,8 +36,8 @@ Send these parameters to the request endpoint via `POST` method.
 		"success" : "http://www.mystore.com/success/",
 		"item" : "5000 Toman Voucher",
 		"cellphone" : 989121111111,
-		"email" : "yourname@mystore.com",
-		"token" : "xxxxxxxxx",
+		"email" : "yourname@domain.com",
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
 		"custom_logo" : "https://www.mystore.com/logo.png",
 		"custom_name" : "Mystore",
 		"custom_domain" : "https://www.mystore.com",
@@ -193,8 +193,7 @@ This schema define the each parameter's type and value.
 
 #### Good Response
 
-The payment is canceled as you wished for.
-If you send correct request then the response should be same thing like that.
+The payment is canceled as you wished for. If you send correct request then the response should be same thing like that.
 
 	{
     		"status": 200,
@@ -202,6 +201,8 @@ If you send correct request then the response should be same thing like that.
 	}
 
 ### Verify Transaction
+
+Merchant should verify transaction after passed by user.
 
 #### Verify Endpoint
 
@@ -212,8 +213,8 @@ If you send correct request then the response should be same thing like that.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
-		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"token" : "xxxxxx"
+		"authority" : "f72715fe81f69a1bfc8895cc5dac121936d00b61",
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
 	}
 
 #### Body Schema
@@ -233,7 +234,7 @@ This schema define the each parameter's type and value.
 
 #### Good Response
 
-Well now, The payment is complete and verified, It's time to deliver your goods or services to buyer.
+Well now, The payment is complete and verified, It's time to deliver your goods or services to your buyer.
 If you send correct request then the response should be same thing like that.
 
 	{
@@ -243,7 +244,7 @@ If you send correct request then the response should be same thing like that.
 		"amount" : "50000",
 		"currency" : "IRR",
 		"item" : "5000 Toman Voucher",
-		"email" : "yourname@mystore.com",
+		"email" : "yourname@domain.com",
 		"cellphone" : "989121111111"
 	}
 
@@ -257,12 +258,12 @@ You can reverse any successful transaction.
 
 #### Body
 
-Send this parameters to the verify endpoint via `GET` or `POST` method.
+Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c",
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"token" : "storetoken
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
 	}
 
 #### Body Schema
@@ -272,15 +273,15 @@ This schema define the each parameter's type and value.
 	{
 		"reference" : {
 			"type" : "string"
-			"description" : "The reference that you received on verify method"
+			"description" : "The reference that you received on verify"
 		},
 		"authority" : {
 			"type" : "string"
-			"description" : "Authority that you received on your success URL"
+			"description" : "Authority key which you received from payment request"
 		},
 		"token" : {
 		   "type" : "string
-		   "description": "The store token wich is required"
+		   "description": "The merchant token is required"
 		}
 	}
 
@@ -294,7 +295,7 @@ Well now, The transaction successfully reversed.
 		"amount" : "50000",
 		"currency" : "IRR",
 		"item" : "5000 Toman Voucher",
-		"email" : "name@email.com",
+		"email" : "yourname@domain.com",
 		"cellphone" : "989121111111"
 	}
 
