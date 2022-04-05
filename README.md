@@ -12,6 +12,7 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
+	* [Wallet List][#wallet-list]
 	* [List of Status Codes](#list-of-status-codes)
 
 ### Create Payment Request
@@ -79,20 +80,20 @@ This schema define the each parameter's type and value.
 			"description" : "Merchant Token is required"
 		},
 		"custom_logo" : {
-		   "type" : "string"
-		   "description": "The Merchant logo image URL"
+			"type" : "string"
+		   	"description": "The Merchant logo image URL"
 		},
 		"custom_name" : {
-		   "type" : "string"
-		   "description": "Store name"
+		   	"type" : "string"
+		   	"description": "Store name"
 		},
 		"custom_domain" : {
-		   "type" : "string"
-		   "description": "The store URL"
+		   	"type" : "string"
+		   	"description": "The store URL"
 		},
 		"redirect" : {
-		   "type" : "integer"
-		   "description": "1 for TRUE and 0 for FALSE"
+		   	"type" : "integer"
+		   	"description": "1 for TRUE and 0 for FALSE"
 		},
 	}
   
@@ -110,11 +111,7 @@ If you send correct request then the response should be same thing like that.
 
 ### Process Transaction
 
-We asked user to process the transaction. User authentication send via header request and user should confirm the payment transaction in-app.
-
-	{
-		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
-	}
+We asked users to process the transaction. They should confirm the payment transaction in-app.
 
 
 #### Process Endpoint
@@ -123,12 +120,13 @@ We asked user to process the transaction. User authentication send via header re
 
 #### Body
 
-Now please, Send `authority` and the `wallet_id` back for confirm.
+Now please, Send `authority`, `user_token` and the `wallet_id` back for confirm.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"wallet_id" : "1"
+		"wallet_id" : "1",
+		"user_token" : "Zarinpalusertoken"
 	}
 
 #### Body Schema
@@ -141,9 +139,13 @@ This schema define the each parameter's type and value.
 			"description" : "Authority key which you received from payment request"
 		},
 		"wallet_id" : {
-		   "type" : "integer"
-		   "description": "The currency that you have chosen"
+		   	"type" : "integer"
+		   	"description": "The currency that you have chosen"
 		},
+		"user_token" : {
+		  	"type" : "string"
+			"description" : "The access token from Zainpal"
+		}
 	}
 
 #### Good Response
@@ -158,11 +160,8 @@ If you send correct request then the response should be same thing like that.
 
 ### Cancel Transaction
 
-Users can cancel the transaction. User authentication send via header request and user should confirm the payment transaction in-app.
-	
-	{
-		"Authorization" : "Token 60bee87h72170f19eefb4d9d0a0fda20553ec85a"
-	}
+Users can cancel the transaction. Thwy should confirm the payment transaction in-app.
+
 
 #### Cancel Endpoint
 
@@ -170,11 +169,12 @@ Users can cancel the transaction. User authentication send via header request an
 
 #### Body
 
-Now please, Send `authority` and `{private token}` and the `wallet_id` back for confirm.
+Now please, Send `authority` and `user_token` back to cancel.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
-		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
+		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
+		"user_token" : "Zarinpalusertoken"
 	}
 
 #### Body Schema
@@ -185,6 +185,10 @@ This schema define the each parameter's type and value.
 		"authority" : {
 			"type" : "string"
 			"description" : "Authority key which you received from payment request"
+		},
+		"user_token" : {
+		  	"type" : "string"
+			"description" : "The access token from Zainpal"
 		}
 	}
 
@@ -224,8 +228,8 @@ This schema define the each parameter's type and value.
 			"description" : "Authority key which you received from payment request"
 		},
 		"token" : {
-		   "type" : "string
-		   "description": "The merchant token is required"
+		   	"type" : "string
+		   	"description": "The merchant token is required"
 		}
 	}
 
@@ -277,8 +281,8 @@ This schema define the each parameter's type and value.
 			"description" : "Authority key which you received from payment request"
 		},
 		"token" : {
-		   "type" : "string
-		   "description": "The merchant token is required"
+		   	"type" : "string
+		   	"description": "The merchant token is required"
 		}
 	}
 
@@ -295,6 +299,82 @@ Well now, The transaction successfully reversed.
 		"email" : "yourname@domain.com",
 		"cellphone" : "989121111111"
 	}
+
+
+
+### Wallet List
+
+Shows the list of active wallets and the wallet that user had transactions with. 
+
+#### Reverse Endpoint
+
+	https://api.zarinplus.com/wallet/list
+
+#### Body
+
+Send request to the wallet list endpoint via `GET` method to see the list of active wallet 
+and send `user_token` and `wallet_id` via `POST` method to see the wallets that you had transactions with.
+
+	{
+		"user_token" : "Zarinpalusertoken",
+		"wallet_id" : 1
+	}
+
+#### Body Schema
+
+This schema define the each parameter's type and value.
+
+	{
+		"user_token" : {
+		  	"type" : "string"
+			"description" : "The access token from Zainpal"
+		},
+		"wallet_id" : {
+		   	"type" : "integer"
+		   	"description": "The currency that you have chosen"
+		},
+	}	
+
+#### Good Response
+
+The `GET` method's response would be like this:
+
+	{
+	    "status": true,
+	    "message": "successful",
+	    "data": [
+		{
+		    "walletId": 1,
+		    "name": "امتیاز",
+		    "symbol": "EMZ",
+		    "color": "FFB703",
+		    "balance": 0.0
+		}
+	    ]
+	}
+
+and for the `POST` method you should see:
+	
+	{
+	    "status": true,
+	    "message": "successful",
+	    "data": [
+		{
+		    "id": 1,
+		    "name": "امتیاز",
+		    "currency": "EMZ",
+		    "symbol": "EMZ",
+		    "exchange_rate": 1000.0,
+		    "logo": null,
+		    "color": "FFB703",
+		    "description": "کیف پول امتیاز",
+		    "active": true,
+		    "exchangeable": true,
+		    "exchange_fee": 0.0
+		}
+	    ]
+	}
+	
 
 
 ## List of Status Codes
