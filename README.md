@@ -312,8 +312,8 @@ Shows the list of active wallets and the wallet that user had transactions with.
 
 #### Body
 
-Send request to the wallet list endpoint via `GET` method to see the list of active wallet 
-and send `user_token` and `wallet_id` via `POST` method to see the wallets that you had transactions with.
+Send request to the wallet list endpoint via `GET` method to see the list of active wallets
+and send `user_token` and `wallet_id` via `POST` method to see the wallet details that you had transactions with.
 
 	{
 		"user_token" : "Zarinpalusertoken",
