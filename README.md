@@ -12,7 +12,7 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
-	* [Wallet List][#wallet-list]
+	* [Wallet List](#wallet-list)
 	* [List of Status Codes](#list-of-status-codes)
 
 ### Create Payment Request
