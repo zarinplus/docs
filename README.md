@@ -317,7 +317,6 @@ and send `user_token` and `wallet_id` via `POST` method to see the wallet detail
 
 	{
 		"user_token" : "Zarinpalusertoken",
-		"wallet_id" : 1
 	}
 
 #### Body Schema
@@ -328,11 +327,7 @@ This schema define the each parameter's type and value.
 		"user_token" : {
 		  	"type" : "string"
 			"description" : "The access token from Zainpal"
-		},
-		"wallet_id" : {
-		   	"type" : "integer"
-		   	"description": "The currency that you have chosen"
-		},
+		}
 	}	
 
 #### Good Response
