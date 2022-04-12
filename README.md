@@ -312,7 +312,7 @@ Shows the list of active wallets and the wallet that user had transactions with.
 
 #### Body
 
-Send request to the wallet list endpoint via `GET` method to see the list of active wallets
+Send request to the wallet list endpoint via `POST` method to see the list of active wallets
 and send `user_token` and `wallet_id` via `POST` method to see the wallet details that you had transactions with.
 
 	{
@@ -332,7 +332,7 @@ This schema define the each parameter's type and value.
 
 #### Good Response
 
-The `GET` method's response would be like this:
+The `POST` method's response would be like this:
 
 	{
 	    "status": true,
