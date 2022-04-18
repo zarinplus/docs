@@ -304,7 +304,7 @@ Well now, The transaction successfully reversed.
 
 ### Wallet List
 
-Shows the list of active wallets and the wallet that user had transactions with. 
+Shows the list of active wallets. 
 
 #### Reverse Endpoint
 
@@ -312,8 +312,7 @@ Shows the list of active wallets and the wallet that user had transactions with.
 
 #### Body
 
-Send request to the wallet list endpoint via `POST` method to see the list of active wallets
-and send `user_token` and `wallet_id` via `POST` method to see the wallet details that you had transactions with.
+Send `user_token` to the wallet list endpoint via `POST` method to see the list of active wallets.
 
 	{
 		"user_token" : "Zarinpalusertoken",
@@ -332,8 +331,6 @@ This schema define the each parameter's type and value.
 
 #### Good Response
 
-The `POST` method's response would be like this:
-
 	{
 	    "status": true,
 	    "message": "successful",
@@ -344,28 +341,6 @@ The `POST` method's response would be like this:
 		    "symbol": "EMZ",
 		    "color": "FFB703",
 		    "balance": 0.0
-		}
-	    ]
-	}
-
-and for the `POST` method you should see:
-	
-	{
-	    "status": true,
-	    "message": "successful",
-	    "data": [
-		{
-		    "id": 1,
-		    "name": "امتیاز",
-		    "currency": "EMZ",
-		    "symbol": "EMZ",
-		    "exchange_rate": 1000.0,
-		    "logo": null,
-		    "color": "FFB703",
-		    "description": "کیف پول امتیاز",
-		    "active": true,
-		    "exchangeable": true,
-		    "exchange_fee": 0.0
 		}
 	    ]
 	}
