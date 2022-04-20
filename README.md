@@ -120,13 +120,13 @@ We asked users to process the transaction. They should confirm the payment trans
 
 #### Body
 
-Now please, Send `authority`, `user_token` and the `wallet_id` back for confirm.
+Now please, Send `authority`, `access_token` and the `wallet_id` back for confirm.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
 		"wallet_id" : "1",
-		"user_token" : "Zarinpalusertoken"
+		"access_token" : "Zarinpalusertoken"
 	}
 
 #### Body Schema
@@ -142,7 +142,7 @@ This schema define the each parameter's type and value.
 		   	"type" : "integer"
 		   	"description": "The currency that you have chosen"
 		},
-		"user_token" : {
+		"access_token" : {
 		  	"type" : "string"
 			"description" : "The access token from Zainpal"
 		}
@@ -169,12 +169,12 @@ Users can cancel the transaction. Thwy should confirm the payment transaction in
 
 #### Body
 
-Now please, Send `authority` and `user_token` back to cancel.
+Now please, Send `authority` and `access_token` back to cancel.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"user_token" : "Zarinpalusertoken"
+		"access_token" : "Zarinpalusertoken"
 	}
 
 #### Body Schema
@@ -186,7 +186,7 @@ This schema define the each parameter's type and value.
 			"type" : "string"
 			"description" : "Authority key which you received from payment request"
 		},
-		"user_token" : {
+		"access_token" : {
 		  	"type" : "string"
 			"description" : "The access token from Zainpal"
 		}
@@ -312,10 +312,10 @@ Shows the list of active wallets.
 
 #### Body
 
-Send `user_token` to the wallet list endpoint via `POST` method to see the list of active wallets.
+Send `access_token` to the wallet list endpoint via `POST` method to see the list of active wallets.
 
 	{
-		"user_token" : "Zarinpalusertoken",
+		"access_token" : "Zarinpalusertoken",
 	}
 
 #### Body Schema
@@ -323,7 +323,7 @@ Send `user_token` to the wallet list endpoint via `POST` method to see the list 
 This schema define the each parameter's type and value.
 
 	{
-		"user_token" : {
+		"access_token" : {
 		  	"type" : "string"
 			"description" : "The access token from Zainpal"
 		}
