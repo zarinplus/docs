@@ -351,14 +351,10 @@ This schema define the each parameter's type and value.
 
 |  Code	    | Message       |
 | ------------- |:-------------:|
-| 401 | Invalid point value | 
-| 402 | Invalid amount or currency |
-| 403 | Invalid token |
-| 200 | Successful |
-| 471 | Unknown error |
-| 481 | Invalid authority |
-| 482 | Invalid authority |
-| 300 | Used authority |
+| 400 | Invalid authority |
+| 401 | Invalid token | 
+| 402 | Invalid currency |
+| 403 | Forbidden request |
 
 
 
