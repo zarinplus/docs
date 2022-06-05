@@ -15,11 +15,12 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Wallet List](#wallet-list)
 	* [List of Status Codes](#list-of-status-codes)
 
-* [Bargh-e-Man](#barghe-man)
+* [Barghe Man](#barghe-man)
 	* [Token](#token)
 	* [Collect](#collect)
 
 
+## Payment
 ### Create Payment Request
 To make a request transaction merchant should use this APIs. 
 
@@ -364,6 +365,8 @@ This schema define the each parameter's type and value.
 
 
 
+
+## Barghe Man
 ### Token
 
 Gives you your token. 
@@ -437,7 +440,7 @@ Send `mask`, `hash`, `phone_number`, `source`, `merchant_id`, `session_id`, `amo
 
 	{
 		"mask" : "603770******6324",
-		"hash" : "17DB16466F17A5A5946BFA3BBB4BB472B2259447AE57814AF15EFCFA94C4C83A	",
+		"hash" : "17DB16466F17A5A5946BFA3BBB4BB472B2259447AE57814AF15EFCFA94C4C83A",
 		"phone_number" : "989324567890",
 		"source" : "bargheman",
 		"merchant_id" : 23,
