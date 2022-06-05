@@ -15,6 +15,11 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Wallet List](#wallet-list)
 	* [List of Status Codes](#list-of-status-codes)
 
+* [Bargh-e-Man](#barghe-man)
+	* [Token](#token)
+	* [Collect](#collect)
+
+
 ### Create Payment Request
 To make a request transaction merchant should use this APIs. 
 
@@ -357,4 +362,144 @@ This schema define the each parameter's type and value.
 | 403 | Forbidden request |
 
 
+
+
+### Token
+
+Gives you your token. 
+
+#### Reverse Endpoint
+
+	https://api.zarinplus.com/user/get-token
+
+#### Body
+
+Send `phone_number`, `first_name`, `last_name`, `national_code` and `client_id` to token endpoint via `POST` method in order to get your token.
+
+	{
+		"phone_number" : "989324567890",
+		"first_name" : "YourFirstName",
+		"last_name" : "YourLastName",
+		"national_code" : "YourNationalCode",
+		"client_id" : 3
+		
+	}
+
+#### Body Schema
+
+This schema define the each parameter's type and value.
+
+	{
+		"phone_number" : {
+		  	"type" : "string"
+			"description" : "Must start with 98 and is necessary"
+		},
+		"first_name" : {
+		  	"type" : "string"
+			"description" : "Your first name"
+		},
+		"last_name" : {
+		  	"type" : "string"
+			"description" : "Your last name"
+		},
+		"national_code" : {
+		  	"type" : "string"
+			"description" : "Your national code"
+		},
+		"client_id" : {
+		  	"type" : "integer"
+			"description" : "The client id which is 3"
+		}
+		
+	}	
+
+#### Good Response
+
+	{
+	    "status": true,
+	    "message": "Successful",
+	    "data": "Token [TOKEN]"
+	}
+	
+	
+
+### Collect
+
+Collects data. 
+
+#### Reverse Endpoint
+
+	https://api.zarinplus.com/cards/collect
+
+#### Body
+
+Send `mask`, `hash`, `phone_number`, `source`, `merchant_id`, `session_id`, `amount` and `date` to collect endpoint via `GET` method in send data.
+
+	{
+		"mask" : "603770******6324",
+		"hash" : "17DB16466F17A5A5946BFA3BBB4BB472B2259447AE57814AF15EFCFA94C4C83A	",
+		"phone_number" : "989324567890",
+		"source" : "bargheman",
+		"merchant_id" : 23,
+		"session_id" : "23",
+		"amount" : 1000.0,
+		"date" : "2021-07-17"
+	}
+
+#### Body Schema
+
+This schema define the each parameter's type and value.
+
+	{
+		"mask" : {
+		  	"type" : "string"
+			"description" : "The mask of the card number which is required"
+		},
+		"hash" : {
+		  	"type" : "string"
+			"description" : "The mask of the card number which is required"
+		},
+		"phone_number" : {
+		  	"type" : "string"
+			"description" : "Must start with 98 which is required"
+		},
+		"source" : {
+		  	"type" : "string"
+			"description" : "Source of data which is required"
+		},
+		"merchant_id" : {
+		  	"type" : "integer"
+			"description" : "The merchant id of the transaction which is optional"
+		},
+		"session_id" : {
+		  	"type" : "string"
+			"description" : "The session id of the transaction which is optional"
+		},
+		"amount" : {
+		  	"type" : "float"
+			"description" : "The amount of the transaction which is optional"
+		},
+		"merchant_id" : {
+		  	"type" : "date"
+			"description" : "2021-07-17 which is optional"
+		},
+		
+	}	
+
+#### Good Response
+
+	{
+	    "status": true,
+	    "message": "Successful",
+	    "data": ""
+	}
+	
+
+
+## List of Status Codes
+
+|  Code	    | Message       |
+| ------------- |:-------------:|
+| 400 | Invalid Phone Number |
+| 403 | Forbidden request |
 
