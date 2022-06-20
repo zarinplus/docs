@@ -15,7 +15,7 @@ This part of document is for merchants _(Who accept payments via EMZ)_, If you w
 	* [Wallet List](#wallet-list)
 	* [List of Status Codes](#list-of-status-codes)
 
-* [Barghe Man](#barghe-man)
+* [White-label](#White-label)
 	* [Token](#token)
 	* [Collect](#collect)
 
@@ -366,7 +366,7 @@ This schema define the each parameter's type and value.
 
 
 
-## Barghe Man
+## White-label
 ### Token
 
 Gives you your token. 
@@ -384,7 +384,7 @@ Send `phone_number`, `first_name`, `last_name`, `national_code` and `client_id` 
 		"first_name" : "YourFirstName",
 		"last_name" : "YourLastName",
 		"national_code" : "YourNationalCode",
-		"client_id" : 3
+		"client_id" : 1
 		
 	}
 
@@ -411,7 +411,7 @@ This schema define the each parameter's type and value.
 		},
 		"client_id" : {
 		  	"type" : "integer"
-			"description" : "The client id which is 3"
+			"description" : "The client id"
 		}
 		
 	}	
