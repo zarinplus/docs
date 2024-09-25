@@ -1,4 +1,4 @@
-![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2021/10/ZarinPlus-logo-light.svg?nocache)
+![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2024/02/Logo-1.png)
 
 ## Zarinplus  Docs 
 
