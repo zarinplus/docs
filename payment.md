@@ -38,7 +38,7 @@ Send these parameters to the request endpoint via `POST` method.
 		"custom_logo" : "https://www.mystore.com/logo.png",
 		"custom_name" : "Mystore",
 		"custom_domain" : "https://www.mystore.com",
-		"redirect" : 1,
+		"redirect" : 1
 	}
 
 #### Body Schema
