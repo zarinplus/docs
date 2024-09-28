@@ -102,6 +102,9 @@ If you send correct request then the response should be same thing like that.
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
+ # After get `authority` for process and payment, you must direct the user to the link below
+ # https://pwa.zarinplus.com/authority={`authority`}
+
 
 ### Cancel Transaction
 
