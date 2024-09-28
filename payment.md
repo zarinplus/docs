@@ -8,16 +8,10 @@ Please read this document to understand how to implement payment via request end
 
 * [Payment](#payment)
 	* [Create Payment Request](#create-payment-request)
-	* [Process Transaction](#process-transaction)
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
-	* [Wallet List](#wallet-list)
 	* [List of Status Codes](#list-of-status-codes)
-
-* [White-label](#White-label)
-	* [Token](#token)
-	* [Collect](#collect)
 
 
 ## Payment
@@ -108,56 +102,6 @@ If you send correct request then the response should be same thing like that.
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
 	}
 
-
-
-### Process Transaction
-
-We asked users to process the transaction. They should confirm the payment transaction in-app.
-
-
-#### Process Endpoint
-
-	https://api.zarinplus.com/payment/process
-
-#### Body
-
-Now please, Send `authority`, `token` and the `wallet_id` back for confirm.
-Send this parameters to the verify endpoint via `POST` method.
-
-	{
-		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"wallet_id" : "1",
-		"token" : "zarinplus token(get from pwa)"
-	}
-
-#### Body Schema
-
-This schema define the each parameter's type and value.
-
-	{
-		"authority" : {
-			"type" : "string"
-			"description" : "Authority key which you received from payment request"
-		},
-		"wallet_id" : {
-		   	"type" : "integer"
-		   	"description": "The currency that you have chosen"
-		},
-		"token" : {
-		  	"type" : "string"
-			"description" : "The access token from zarinplus"
-		}
-	}
-
-#### Good Response
-
-Well now, The payment is confirmed. It's time to waite for your transaction to be confirmed.
-If you send correct request then the response should be same thing like that.
-
-	{
-    		"status": 200,
-    		"message": "Successful merchant"
-	}
 
 ### Cancel Transaction
 
@@ -308,87 +252,6 @@ Well now, The transaction successfully reversed.
 | ------------- |:-------------:|
 | 400 | Invalid authority |
 | 401 | Invalid token | 
-| 402 | Invalid currency |
 | 403 | Forbidden request |
 
-
-### Collect
-
-Collects data. 
-
-#### Reverse Endpoint
-
-	https://api.zarinplus.com/cards/collect
-
-#### Body
-
-Send `mask`, `hash`, `phone_number`, `source`, `merchant_id`, `session_id`, `amount` and `date` to collect endpoint via `GET` method in send data.
-
-	{
-		"mask" : "603770******6324",
-		"hash" : "17DB16466F17A5A5946BFA3BBB4BB472B2259447AE57814AF15EFCFA94C4C83A",
-		"phone_number" : "989324567890",
-		"source" : "bargheman",
-		"merchant_id" : 23,
-		"session_id" : "23",
-		"amount" : 1000.0,
-		"date" : "2021-07-17"
-	}
-
-#### Body Schema
-
-This schema define the each parameter's type and value.
-
-	{
-		"mask" : {
-		  	"type" : "string"
-			"description" : "The mask of the card number which is required"
-		},
-		"hash" : {
-		  	"type" : "string"
-			"description" : "The mask of the card number which is required"
-		},
-		"phone_number" : {
-		  	"type" : "string"
-			"description" : "Must start with 98 which is required"
-		},
-		"source" : {
-		  	"type" : "string"
-			"description" : "Source of data which is required"
-		},
-		"merchant_id" : {
-		  	"type" : "integer"
-			"description" : "The merchant id of the transaction which is optional"
-		},
-		"session_id" : {
-		  	"type" : "string"
-			"description" : "The session id of the transaction which is optional"
-		},
-		"amount" : {
-		  	"type" : "float"
-			"description" : "The amount of the transaction which is optional"
-		},
-		"merchant_id" : {
-		  	"type" : "date"
-			"description" : "2021-07-17 which is optional"
-		},
-		
-	}	
-
-#### Good Response
-
-	{
-	    "status": true,
-	    "message": "Successful",
-	    "data": ""
-	}
-	
-
-
-## List of Status Codes
-
-|  Code	    | Message       |
-| ------------- |:-------------:|
-| 400 | Invalid Phone Number |
-| 403 | Forbidden request |
 
