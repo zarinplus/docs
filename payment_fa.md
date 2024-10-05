@@ -72,15 +72,13 @@ https://api.zarinplus.com/payment/request
 {
     "status" : "200",
     "message" : "Get the authority code",
-    "authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
+    "authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61",
+    "redirect_url: "https://pwa.zarinplus.com/authority={authority}&phone={cellphone}
 }
 ```
 
 ### هدایت کاربر به لینک پرداخت
-پس از دریافت `authority`، برای پردازش و پرداخت، کاربر باید به لینک زیر هدایت شود:
-```
-https://pwa.zarinplus.com/authority={`authority`}
-```
+پس از دریافت `authority`، برای پردازش و پرداخت، کاربر باید به لینک `redirect_url` هدایت شود.
 
 ---
 
