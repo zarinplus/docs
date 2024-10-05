@@ -73,7 +73,7 @@ https://api.zarinplus.com/payment/request
     "status" : "200",
     "message" : "Get the authority code",
     "authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61",
-    "redirect_url: "https://pwa.zarinplus.com/authority={authority}&phone={cellphone}"
+    "redirect_url" : "https://pwa.zarinplus.com/authority={authority}&phone={cellphone}"
 }
 ```
 
