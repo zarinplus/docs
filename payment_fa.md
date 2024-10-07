@@ -38,7 +38,7 @@ https://api.zarinplus.com/payment/request
     "cancel" : "http://www.mystore.com/cancel/",
     "success" : "http://www.mystore.com/success/",
     "item" : "5000 Toman Voucher",
-    "cellphone" : 09121111111,
+    "cellphone" : "09121111111",
     "email" : "yourname@domain.com",
     "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
 }
