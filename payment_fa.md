@@ -126,7 +126,8 @@ https://api.zarinplus.com/payment/verify
 ```json
 {
     "authority" : "f72715fe81f69a1bfc8895cc5dac121936d00b61",
-    "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
+    "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+    "amount": 50000
 }
 ```
 
