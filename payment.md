@@ -32,13 +32,9 @@ Send these parameters to the request endpoint via `POST` method.
 		"cancel" : "http://www.mystore.com/cancel/",
 		"success" : "http://www.mystore.com/success/",
 		"item" : "5000 Toman Voucher",
-		"cellphone" : 989121111111,
+		"cellphone" : "09121111111",
 		"email" : "yourname@domain.com",
-		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
-		"custom_logo" : "https://www.mystore.com/logo.png",
-		"custom_name" : "Mystore",
-		"custom_domain" : "https://www.mystore.com",
-		"redirect" : 1
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
 	}
 
 #### Body Schema
@@ -74,22 +70,6 @@ This schema define the each parameter's type and value.
 			"type" : "string"
 			"description" : "Merchant Token is required"
 		},
-		"custom_logo" : {
-			"type" : "string"
-		   	"description": "The Merchant logo image URL"
-		},
-		"custom_name" : {
-		   	"type" : "string"
-		   	"description": "Store name"
-		},
-		"custom_domain" : {
-		   	"type" : "string"
-		   	"description": "The store URL"
-		},
-		"redirect" : {
-		   	"type" : "integer"
-		   	"description": "1 for TRUE and 0 for FALSE"
-		},
 	}
   
 #### Good Response
@@ -99,7 +79,8 @@ If you send correct request then the response should be same thing like that.
 	{
 		"status" : "200",
 		"message" : "Get the authority code",
-		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61"
+		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61",
+  		"redirect_ur": "https://pwa.zarinplus.com/authority=f72705fe8a9bfc8895cc5dac121931f696d00b61&phone=09121111111"
 	}
 
 
@@ -118,12 +99,11 @@ Users can cancel the transaction. Thwy should confirm the payment transaction in
 
 #### Body
 
-Now please, Send `authority` and `access_token` back to cancel.
+Now please, Send `authority` back to cancel.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
-		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61",
-		"access_token" : "Zarinpalusertoken"
+		"authority" : "f72715fe8a1bfc8895cc5dac121931f696d00b61"
 	}
 
 #### Body Schema
@@ -134,10 +114,6 @@ This schema define the each parameter's type and value.
 		"authority" : {
 			"type" : "string"
 			"description" : "Authority key which you received from payment request"
-		},
-		"access_token" : {
-		  	"type" : "string"
-			"description" : "The access token from Zainpal"
 		}
 	}
 
@@ -164,7 +140,8 @@ Send this parameters to the verify endpoint via `POST` method.
 
 	{
 		"authority" : "f72715fe81f69a1bfc8895cc5dac121936d00b61",
-		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+  		"amount": 50000
 	}
 
 #### Body Schema
