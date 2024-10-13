@@ -199,4 +199,4 @@ https://api.zarinplus.com/payment/reverse
 | 403 | درخواست غیرمجاز |
 
 ## افزونه ووکامرس
-برای دریافت افروزنه قابل نصب در وردپرس  [اینجا](https://github.com/zarinplus/docs/blob/master/zarinplus-woocommerce-payment-gateway.zip) کلیک کنید.
+برای دریافت افروزنه قابل نصب در وردپرس  [اینجا](https://github.com/zarinplus/docs/raw/refs/heads/master/zarinplus-woocommerce-payment-gateway.zip) کلیک کنید.
