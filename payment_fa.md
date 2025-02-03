@@ -63,7 +63,7 @@ https://api.zarinplus.com/payment/request
 
 ```json
 {
-    "status" : "200",
+    "status" : true,
     "message" : "Get the authority code",
     "authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61",
     "redirect_url" : "https://pwa.zarinplus.com/authority=f72705fe8a9bfc8895cc5dac121931f696d00b61&phone=09121111111"
@@ -105,7 +105,7 @@ https://api.zarinplus.com/payment/cancel
 
 ```json
 {
-    "status": 200,
+    "status": true,
     "message": "You have canceled merchant"
 }
 ```
@@ -143,7 +143,7 @@ https://api.zarinplus.com/payment/verify
 
 ```json
 {
-    "status" : "200",
+    "status" : true,
     "message" : "Successful",
     "reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c"
 }
@@ -183,7 +183,7 @@ https://api.zarinplus.com/payment/reverse
 
 ```json
 {
-    "status" : "500",
+    "status" : true,
     "message" : "Reversed"
 }
 ```
