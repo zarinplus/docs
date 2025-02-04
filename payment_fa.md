@@ -26,7 +26,7 @@
 #### نقطه پایان درخواست
 
 ```
-https://api.zarinplus.com/payment/request
+https://api.zarinplus.com/payment/v2/request/
 ```
 
 #### پارامترهای ارسالی
@@ -82,7 +82,7 @@ https://api.zarinplus.com/payment/request
 #### نقطه پایان لغو
 
 ```
-https://api.zarinplus.com/payment/cancel
+https://api.zarinplus.com/payment/v2/cancel/
 ```
 
 #### پارامترهای ارسالی
@@ -106,7 +106,7 @@ https://api.zarinplus.com/payment/cancel
 ```json
 {
     "status": true,
-    "message": "You have canceled merchant"
+    "message": "You have canceled transaction"
 }
 ```
 
@@ -119,7 +119,7 @@ https://api.zarinplus.com/payment/cancel
 #### نقطه پایان تأیید
 
 ```
-https://api.zarinplus.com/payment/verify
+https://api.zarinplus.com/payment/v2/verify/
 ```
 
 #### پارامترهای ارسالی
@@ -143,11 +143,20 @@ https://api.zarinplus.com/payment/verify
 
 ```json
 {
-    "status" : true,
-    "message" : "Successful",
-    "reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c"
+    "status": true,
+    "message": "Successful",
+    "data": {
+        "status": 200,
+        "message": "Successful",
+        "amount": 50000,
+        "currency": "IRR",
+        "reference": "512c773635c2a716340ce70bdddad25ace806378",
+        "cellphone": "09226521257",
+        "user_cellphone": "989337679420"
+    }
 }
 ```
+## در این api لازم است حتما response
 
 ---
 
@@ -158,7 +167,7 @@ https://api.zarinplus.com/payment/verify
 #### نقطه پایان بازگشت
 
 ```
-https://api.zarinplus.com/payment/reverse
+https://api.zarinplus.com/payment/v2/reverse/
 ```
 
 #### پارامترهای ارسالی
@@ -183,8 +192,17 @@ https://api.zarinplus.com/payment/reverse
 
 ```json
 {
-    "status" : true,
-    "message" : "Reversed"
+    "status": true,
+    "message": "success",
+    "data": {
+        "status": 101,
+        "message": "Reversed",
+        "amount": 1000000,
+        "currency": "IRR",
+        "item": "Item description",
+        "email": "example@example.com",
+        "cellphone": "09226521257"
+    }
 }
 ```
 
