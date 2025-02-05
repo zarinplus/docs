@@ -19,7 +19,7 @@
 
 ## پرداخت
 
-### ایجاد درخواست پرداخت
+## ایجاد درخواست پرداخت
 
 برای ایجاد یک تراکنش درخواست، فروشنده باید از API‌های ارائه‌شده استفاده کند.
 
@@ -75,7 +75,7 @@ https://api.zarinplus.com/payment/v2/request/
 
 ---
 
-### لغو تراکنش
+## لغو تراکنش
 
 کاربران می‌توانند تراکنش را لغو کنند و باید تأییدیه لغو در برنامه ارسال شود.
 
@@ -112,7 +112,7 @@ https://api.zarinplus.com/payment/v2/cancel/
 
 ---
 
-### تأیید تراکنش
+## تأیید تراکنش
 
 فروشنده باید پس از تأیید تراکنش توسط کاربر، آن را تأیید کند.
 
@@ -146,7 +146,7 @@ https://api.zarinplus.com/payment/v2/verify/
     "status": true,
     "message": "Successful",
     "data": {
-        "status": 200,
+        "code": 200,
         "message": "Successful",
         "amount": 50000,
         "currency": "IRR",
@@ -156,11 +156,11 @@ https://api.zarinplus.com/payment/v2/verify/
     }
 }
 ```
-## در این api لازم است حتما response
+### در این api لازم است حتما response['data']['code'] چک شود که اگر یک authority دوباره verify شود عدد code عوض شده و به 201 تغییر میابد و باید دقت داشته باشین صرفا روی عدد 200 فاکتور کاربر را موفق و نهایی کنید.
 
 ---
 
-### بازگشت تراکنش
+## بازگشت تراکنش
 
 شما می‌توانید هر تراکنش موفق را برگردانید.
 
@@ -195,7 +195,7 @@ https://api.zarinplus.com/payment/v2/reverse/
     "status": true,
     "message": "success",
     "data": {
-        "status": 101,
+        "code": 101,
         "message": "Reversed",
         "amount": 1000000,
         "currency": "IRR",
