@@ -15,12 +15,12 @@ Please read this document to understand how to implement payment via request end
 
 
 ## Payment
-### Create Payment Request
+## Create Payment Request
 To make a request transaction merchant should use this APIs. 
 
 #### Request Endpoint
 
-	https://api.zarinplus.com/payment/request
+	https://api.zarinplus.com/payment/v2/request/
 	
 
 #### Body
@@ -77,7 +77,7 @@ This schema define the each parameter's type and value.
 If you send correct request then the response should be same thing like that.
 
 	{
-		"status" : "200",
+		"status" : true,
 		"message" : "Get the authority code",
 		"authority" : "f72705fe8a9bfc8895cc5dac121931f696d00b61",
   		"redirect_ur": "https://pwa.zarinplus.com/authority=f72705fe8a9bfc8895cc5dac121931f696d00b61&phone=09121111111"
@@ -88,15 +88,15 @@ If you send correct request then the response should be same thing like that.
  #### https://pwa.zarinplus.com/authority={`authority`}
 
 
-### Cancel Transaction
+## Cancel Transaction
 
 Users can cancel the transaction. Thwy should confirm the payment transaction in-app.
 
 
 #### Cancel Endpoint
 
-	https://api.zarinplus.com/payment/cancel
-
+	https://api.zarinplus.com/payment/v2/cancel/
+ 
 #### Body
 
 Now please, Send `authority` back to cancel.
@@ -122,17 +122,17 @@ This schema define the each parameter's type and value.
 The payment is canceled as you wished for. If you send correct request then the response should be same thing like that.
 
 	{
-    		"status": 200,
-    		"message": "You have canceled merchant"
+    		"status": true,
+    		"message": "You have canceled transaction"
 	}
 
-### Verify Transaction
+## Verify Transaction
 
 Merchant should verify transaction after passed by user.
 
 #### Verify Endpoint
 
-	https://api.zarinplus.com/payment/verify
+	https://api.zarinplus.com/payment/v2/verify/
 
 #### Body
 
@@ -164,24 +164,32 @@ This schema define the each parameter's type and value.
 Well now, The payment is completed and verified, It's time to deliver your goods or services to your buyer.
 If you send correct request then the response should be same thing like that.
 
-	{
-		"status" : "200",
-		"message" : "Successful",
-		"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c"
-		"amount" : "50000",
-		"currency" : "IRR",
-		"item" : "5000 Toman Voucher",
-		"email" : "yourname@domain.com",
-		"cellphone" : "989121111111"
-	}
 
-### Reverse Transaction
+```json
+{
+    "status": true,
+    "message": "Successful",
+    "data": {
+        "code": 200,
+        "message": "Successful",
+        "amount": 50000,
+        "currency": "IRR",
+        "reference": "512c773635c2a716340ce70bdddad25ace806378",
+        "cellphone": "09226521257",
+        "user_cellphone": "989337679420"
+    }
+}
+```
+
+### 🔴 In this API, it is necessary to check response['data']['code'], because if an authority is verified again, the code number will change to 201, and you must be careful to only make the user's factor successful and final on the number 200. Unless in special circumstances, the implementation is also necessary on the number 201.
+
+## Reverse Transaction
 
 You can reverse any successful transaction. 
 
 #### Reverse Endpoint
 
-	https://api.zarinplus.com/payment/reverse
+	https://api.zarinplus.com/payment/v2/reverse/
 
 #### Body
 
@@ -216,15 +224,21 @@ This schema define the each parameter's type and value.
 
 Well now, The transaction successfully reversed.
 
-	{
-		"status" : "500",
-		"message" : "Reversed",
-		"amount" : "50000",
-		"currency" : "IRR",
-		"item" : "5000 Toman Voucher",
-		"email" : "yourname@domain.com",
-		"cellphone" : "989121111111"
-	}
+```json
+{
+    "status": true,
+    "message": "success",
+    "data": {
+        "code": 101,
+        "message": "Reversed",
+        "amount": 1000000,
+        "currency": "IRR",
+        "item": "Item description",
+        "email": "example@example.com",
+        "cellphone": "09226521257"
+    }
+}
+```
 
 
 ## List of Status Codes
