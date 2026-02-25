@@ -34,7 +34,8 @@ Send these parameters to the request endpoint via `POST` method.
 		"item" : "5000 Toman Voucher",
 		"cellphone" : "09121111111",
 		"email" : "yourname@domain.com",
-		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+		"gateway: "zarinplus"
 	}
 
 #### Body Schema
@@ -60,16 +61,20 @@ This schema define the each parameter's type and value.
 		},
 		"cellphone" : {
 			"type" : "integer"
-			"description" : "Buyer cellphone"
+			"description" : "Buyer cellphone(optional)"
 		},
 		"email" : {
 			"type" : "string"
-			"description" : "Buyer email address"
+			"description" : "Buyer email address(optional)"
 		},
 		"token" : {
 			"type" : "string"
 			"description" : "Merchant Token is required"
 		},
+		"gateway": {
+			"type": "string"
+			"description": "default is zarinplus (optional)"
+		}
 	}
   
 #### Good Response
