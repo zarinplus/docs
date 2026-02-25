@@ -42,7 +42,7 @@ https://api.zarinplus.com/payment/v2/request/
     "cellphone" : "09121111111",
     "email" : "yourname@domain.com",
     "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
-	"gateway: "zarinplus"
+	"gateway": "zarinplus"
 }
 ```
 
