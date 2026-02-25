@@ -41,7 +41,8 @@ https://api.zarinplus.com/payment/v2/request/
     "item" : "5000 Toman Voucher",
     "cellphone" : "09121111111",
     "email" : "yourname@domain.com",
-    "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
+    "token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+	"gateway: "zarinplus"
 }
 ```
 
@@ -56,6 +57,7 @@ https://api.zarinplus.com/payment/v2/request/
 - `cellphone`: شماره تلفن همراه خریدار.
 - `email`: آدرس ایمیل خریدار.
 - `token`: توکن فروشنده که ضروری است.
+- `gateway`: انتخاب درگاه که پیش فرض زرین پلاس میباشد
 
 #### پاسخ موفق
 
