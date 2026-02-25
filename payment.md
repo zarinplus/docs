@@ -35,7 +35,7 @@ Send these parameters to the request endpoint via `POST` method.
 		"cellphone" : "09121111111",
 		"email" : "yourname@domain.com",
 		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
-		"gateway: "zarinplus"
+		"gateway": "zarinplus"
 	}
 
 #### Body Schema
