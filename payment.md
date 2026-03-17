@@ -17,6 +17,15 @@ Please read this document to understand how to implement payment via request end
 
 ## List of Gateways(optional)
 To list the gateways that a merchant can use, the following api can be called
+### endpoint
+    https://api.zarinplus.com/payment/gateways/
+#### Body
+Send these parameters to the request endpoint via `POST` method.
+
+	{
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
+	}
+token is merchant token and required.
 
 
 ## Payment
