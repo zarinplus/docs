@@ -35,7 +35,7 @@ Send these parameters to the request endpoint via `POST` method.
 		"cellphone" : "09121111111",
 		"email" : "yourname@domain.com",
 		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
-		"gateway": "zarinplus"
+		"gateway_slug": "zarinplus"
 	}
 
 #### Body Schema
@@ -71,7 +71,7 @@ This schema define the each parameter's type and value.
 			"type" : "string"
 			"description" : "Merchant Token is required"
 		},
-		"gateway": {
+		"gateway_slug": {
 			"type": "string"
 			"description": "default is zarinplus (optional)"
 		}
