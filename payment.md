@@ -6,7 +6,7 @@ Please read this document to understand how to implement payment via request end
 
 ## Table of Contents
 
-	* [List of Gateways(optional)](#get-list-of-gateways)
+* [List of Gateways(optional)](#get-list-of-gateways)
 	
 * [Payment](#payment)
 	* [Create Payment Request](#create-payment-request)
