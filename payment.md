@@ -6,12 +6,17 @@ Please read this document to understand how to implement payment via request end
 
 ## Table of Contents
 
+	* [List of Gateways(optional)](#get-list-of-gateways)
+	
 * [Payment](#payment)
 	* [Create Payment Request](#create-payment-request)
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
 	* [List of Status Codes](#list-of-status-codes)
+
+## List of Gateways(optional)
+To list the gateways that a merchant can use, the following api can be called
 
 
 ## Payment
