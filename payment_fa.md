@@ -222,6 +222,62 @@ https://api.zarinplus.com/payment/v2/reverse/
 }
 ```
 
+## بازگشت قسمتی از مبلغ تراکنش
+
+
+#### نقطه پایان
+
+	https://api.zarinplus.com/payment/refund-part-of-tx/
+#### بدنه
+
+پارامتر های ارسالی در قالب `POST` متد.
+
+	{
+		"transaction_id" : 1,
+		"reason" : "test",
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+		"refund_amount": 1500
+	}
+
+#### توضیح بدنه
+
+	{
+		"reason" : {
+			"type" : "string"
+			"description" : "دلیل ریفاند قسمتی از تراکنش (آپشنال)"
+		},
+		"token" : {
+		   	"type" : "string
+		   	"description": "توکن پذیرنده"
+		},
+		"refund_amount" : {
+			"type" : int
+			"description" : "مبلغی که باید ریفاند شود"
+		},
+	}
+
+#### ریسپانس ایده آل
+
+
+```json
+{
+    "status": true,
+    "message": "success",
+    "data": {
+        "original_transaction_id": 1,
+        "original_amount": 200000,
+        "actual_refund_amount": 1500,
+        "replacement_transaction": {
+			"authority": new_authority,
+			"reference": new_reference,
+			"amount": new_transaction_amount,
+		},
+        "refunded_at": "2026-12-12 10:12:12"
+    }
+}
+```
+
+
 ---
 
 ## لیست کدهای وضعیت
