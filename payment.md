@@ -13,6 +13,7 @@ Please read this document to understand how to implement payment via request end
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
 	* [Reverse Transaction](#reverse-transaction)
+	* [Reverse Part of Transaction](#reverse-part-of-transaction)
 	* [List of Status Codes](#list-of-status-codes)
 
 ## List of Gateways(optional)
@@ -255,6 +256,65 @@ Well now, The transaction successfully reversed.
         "item": "Item description",
         "email": "example@example.com",
         "cellphone": "09226521257"
+    }
+}
+```
+
+## Reverse Part of Transaction
+
+You can reverse any successful transaction. 
+
+#### Reverse Endpoint
+
+	https://api.zarinplus.com/payment/refund-part-of-tx/
+#### Body
+
+Send this parameters to the verify endpoint via `POST` method.
+
+	{
+		"transaction_id" : 1,
+		"reason" : "test",
+		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
+		"refund_amount": 1500
+	}
+
+#### Body Schema
+
+This schema define the each parameter's type and value.
+
+	{
+		"reason" : {
+			"type" : "string"
+			"description" : "reason for refund part of tx(optional)"
+		},
+		"token" : {
+		   	"type" : "string
+		   	"description": "The merchant token is required"
+		},
+		"refund_amount" : {
+			"type" : int
+			"description" : "Amount to be refunded"
+		},
+	}
+
+#### Good Response
+
+Well now, The transaction successfully reversed.
+
+```json
+{
+    "status": true,
+    "message": "success",
+    "data": {
+        "original_transaction_id": 1,
+        "original_amount": 200000,
+        "actual_refund_amount": 1500,
+        "replacement_transaction": {
+			"authority": new_authority,
+			"reference": new_reference,
+			"amount": new_transaction_amount,
+		},
+        "refunded_at": "2026-12-12 10:12:12"
     }
 }
 ```
