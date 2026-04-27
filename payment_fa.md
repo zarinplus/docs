@@ -234,28 +234,18 @@ https://api.zarinplus.com/payment/v2/reverse/
 پارامتر های ارسالی در قالب `POST` متد.
 
 	{
-		"transaction_id" : 1,
+    	"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c",
 		"reason" : "test",
 		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
 		"refund_amount": 1500
 	}
 
 #### توضیح بدنه
+- `reference`: مرجع تراکنش که در زمان تأیید دریافت شده است.
+- `reason`: دلیل ریفاند قسمتی از تراکنش (آپشنال)
+- `token`: توکن فروشنده که ضروری است.
+- `refund_amount`: مبلغی که باید ریفاند شود
 
-	{
-		"reason" : {
-			"type" : "string"
-			"description" : "دلیل ریفاند قسمتی از تراکنش (آپشنال)"
-		},
-		"token" : {
-		   	"type" : "string
-		   	"description": "توکن پذیرنده"
-		},
-		"refund_amount" : {
-			"type" : int
-			"description" : "مبلغی که باید ریفاند شود"
-		},
-	}
 
 #### ریسپانس ایده آل
 
