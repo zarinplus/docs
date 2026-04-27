@@ -272,7 +272,7 @@ You can reverse any successful transaction.
 Send this parameters to the verify endpoint via `POST` method.
 
 	{
-		"transaction_id" : 1,
+		"reference" : "46a1e78525619a25b368c32b9ba11b92f6063e0c",
 		"reason" : "test",
 		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61",
 		"refund_amount": 1500
@@ -283,6 +283,10 @@ Send this parameters to the verify endpoint via `POST` method.
 This schema define the each parameter's type and value.
 
 	{
+		"reference" : {
+			"type" : "string"
+			"description" : "The reference that you received on verify"
+		},
 		"reason" : {
 			"type" : "string"
 			"description" : "reason for refund part of tx(optional)"
