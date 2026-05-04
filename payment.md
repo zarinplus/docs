@@ -6,9 +6,9 @@ Please read this document to understand how to implement payment via request end
 
 ## Table of Contents
 
-* [List of Gateways(optional)](#get-list-of-gateways)
 	
 * [Payment](#payment)
+    * [List of Gateways](#list-of-gateways)
 	* [Create Payment Request](#create-payment-request)
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
@@ -16,7 +16,10 @@ Please read this document to understand how to implement payment via request end
 	* [Reverse Part of Transaction](#reverse-part-of-transaction)
 	* [List of Status Codes](#list-of-status-codes)
 
-## List of Gateways(optional)
+
+## Payment
+
+## List of Gateways
 To list the gateways that a merchant can use, the following api can be called
 ### endpoint
     https://api.zarinplus.com/payment/gateways/
@@ -27,9 +30,29 @@ Send these parameters to the request endpoint via `POST` method.
 		"token" : "9a1bfc8895cc5df72715fe81f6ac121936d00b61"
 	}
 token is merchant token and required.
+### Example Response
+	{
+	    "status": true,
+	    "message": "successful",
+	    "data": [
+	        {
+	            "id": 1,
+	            "title": "زرین پلاس",
+	            "description": "درگاه اقساطی",
+	            "slug": "zarinplus",
+	            "icon": "https://api.zarinplus.com/media/payment/2026-04-21/ZarinPlus.png"
+	        },
+	        {
+	            "id": 3,
+	            "title": "وایب",
+	            "description": "پرداخت با کسر از حقوق",
+	            "slug": "vibe",
+	            "icon": "https://api.zarinplus.com/media/payment/2026-04-21/Vibe.png"
+	        }
+	    ]
+	}
 
 
-## Payment
 ## Create Payment Request
 To make a request transaction merchant should use this APIs. 
 
