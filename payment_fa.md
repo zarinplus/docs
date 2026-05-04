@@ -50,13 +50,6 @@
 	            "description": "پرداخت با کسر از حقوق",
 	            "slug": "vibe",
 	            "icon": "https://api.zarinplus.com/media/payment/2026-04-21/Vibe.png"
-	        },
-	        {
-	            "id": 5,
-	            "title": "رادپی",
-	            "description": "درگاه اقساطی",
-	            "slug": "radpay",
-	            "icon": "https://api.zarinplus.com/0"
 	        }
 	    ]
 	}
