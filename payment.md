@@ -8,7 +8,7 @@ Please read this document to understand how to implement payment via request end
 
 	
 * [Payment](#payment)
-    * [List of Gateways](#list-of-gateways)
+    * [List of Gateways](#list-of-gateways) *NEW
 	* [Create Payment Request](#create-payment-request)
 	* [Cancel Transaction](#cancel-transaction)
 	* [Verify Transaction](#verify-transaction)
