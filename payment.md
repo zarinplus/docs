@@ -45,7 +45,7 @@ token is merchant token and required.
 	        {
 	            "id": 3,
 	            "title": "وایب",
-	            "description": "پرداخت با کسر از حقوق",
+	            "description": "پرداخت با اعتبار وایب و کارت رفاهی(بانک رفاه کارگران)",
 	            "slug": "vibe",
 	            "icon": "https://api.zarinplus.com/media/payment/2026-04-21/Vibe.png"
 	        }
