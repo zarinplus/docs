@@ -1,4 +1,4 @@
-![Zarinplus Logo](https://www.zarinplus.com/wp-content/uploads/2024/02/Logo-1.png)
+<img src="https://www.zarinplus.com/wp-content/uploads/2024/02/Logo-1.png" alt="Zarinplus Logo" style="width:200px;"/>
 
 # مستندات فنی زرین‌پلاس
 
